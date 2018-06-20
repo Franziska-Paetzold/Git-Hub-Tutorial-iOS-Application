@@ -23,7 +23,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Was ist Git?"/>
                                 <connections>
-                                    <segue destination="B73-IV-bIY" kind="show" id="QOT-mf-B0Y"/>
+                                    <segue destination="B73-IV-bIY" kind="show" identifier="segueStartToGitExplanation" id="QOT-mf-B0Y"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zHu-kp-JL6">
@@ -31,7 +31,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Starte das Tutorial"/>
                                 <connections>
-                                    <segue destination="BdD-xA-e4V" kind="show" id="724-yy-cBD"/>
+                                    <segue destination="BdD-xA-e4V" kind="show" identifier="segueStartToStartTutorial" id="724-yy-cBD"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -58,14 +58,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XEe-qf-DNo" userLabel="Zurück">
-                                <rect key="frame" x="88" y="102" width="49" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ryg-Yw-KW5">
+                                <rect key="frame" x="80" y="151" width="49" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Zurück"/>
-                                <connections>
-                                    <action selector="backButton:" destination="BdD-xA-e4V" eventType="touchUpInside" id="j2J-Yn-ejB"/>
-                                    <segue destination="0kl-pS-KeY" kind="unwind" unwindAction="unwindSegue:" id="SzJ-5L-KzG"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -75,7 +71,6 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c5u-NG-a5n" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="0kl-pS-KeY" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1464.8" y="799.2503748125938"/>
         </scene>
@@ -96,20 +91,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XLd-YO-Csp">
-                                <rect key="frame" x="124" y="530" width="126" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Starte das Tutorial"/>
-                                <connections>
-                                    <segue destination="BdD-xA-e4V" kind="show" id="4wt-Os-Gx1"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zQj-oG-QRn" userLabel="Zurück">
                                 <rect key="frame" x="130" y="45" width="49" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Zurück"/>
                                 <connections>
-                                    <segue destination="XWj-Id-fLd" kind="unwind" unwindAction="backButton:" id="hUY-Vp-snB"/>
+                                    <segue destination="XWj-Id-fLd" kind="unwind" unwindAction="unwindToStartWithSegue:" id="QzR-SP-0cA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XLd-YO-Csp">
+                                <rect key="frame" x="124" y="459" width="126" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Starte das Tutorial"/>
+                                <connections>
+                                    <segue destination="BdD-xA-e4V" kind="show" identifier="segueGitExplanationToStartTutorial" id="4wt-Os-Gx1"/>
                                 </connections>
                             </button>
                         </subviews>

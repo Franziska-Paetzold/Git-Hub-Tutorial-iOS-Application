@@ -10,28 +10,29 @@ import UIKit
 
 class StartTutorialViewController: UIViewController {
 
-    @IBAction func backButton(_ sender: UIStoryboardSegue) {
-        _ = navigationController?.popViewController(animated: true)
-    }
+    //ToDo: initializer
+    var segueFromController: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func unwindSegue(_ sender: UIStoryboardSegue) {
-        print("worked")
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func back(sender: UIButton) {
+        //segueFromController will be overwritten in the different view controllers
+        if segueFromController == "StartViewController"{
+            //segueIDs are set in the storyboard
+            //nil chooses the defalt for the sender
+            self.performSegue(withIdentifier: "segueStartTutorialToStart", sender: nil)
+        }
+        else if segueFromController == "GitExplanationViewController"{
+            self.performSegue(withIdentifier: "segueStartTutorialToGitExplanation", sender: nil)
+        }
     }
-    */
-
 }

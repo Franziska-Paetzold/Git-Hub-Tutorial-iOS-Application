@@ -9,23 +9,27 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    @IBAction func backButtonStartTutorialView(_ sender: Any) {
-    }
-    
-    @IBAction func backButtonExplanationView(_ sender: Any) {
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBAction func backToStartController(segue: UIStoryboardSegue) {
+        print("Unwind to Start View")
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let destination = segue.destination as! StartTutorialViewController
+        destination.segueFromController = "StartViewController"
+        
+    }
+    
 }
 
