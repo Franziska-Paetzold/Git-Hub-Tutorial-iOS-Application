@@ -9,9 +9,22 @@
 import UIKit
 
 class StartTutorialViewController: UIViewController {
-
+    
     //ToDo: initializer
     var segueFromController: String!
+    
+
+    @IBAction func backToPreviousController(_ sender: Any) {
+        //segueFromController will be overwritten in the different view controllers
+        if segueFromController == "StartViewController"{
+            //segueIDs are set in the storyboard
+            //nil chooses the defalt for the sender
+            self.performSegue(withIdentifier: "segueStartTutorialToStart", sender: nil)
+        }
+        else if segueFromController == "GitExplanationViewController"{
+            self.performSegue(withIdentifier: "segueStartTutorialToGitExplanation", sender: nil)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,15 +37,5 @@ class StartTutorialViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func back(sender: UIButton) {
-        //segueFromController will be overwritten in the different view controllers
-        if segueFromController == "StartViewController"{
-            //segueIDs are set in the storyboard
-            //nil chooses the defalt for the sender
-            self.performSegue(withIdentifier: "segueStartTutorialToStart", sender: nil)
-        }
-        else if segueFromController == "GitExplanationViewController"{
-            self.performSegue(withIdentifier: "segueStartTutorialToGitExplanation", sender: nil)
-        }
-    }
+    
 }

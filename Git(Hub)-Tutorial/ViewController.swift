@@ -26,8 +26,9 @@ class ViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        let destination = segue.destination as! StartTutorialViewController
+        if let destination = segue.destination as? StartTutorialViewController{
         destination.segueFromController = "StartViewController"
+        }
         
     }
     

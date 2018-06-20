@@ -23,7 +23,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Was ist Git?"/>
                                 <connections>
-                                    <segue destination="B73-IV-bIY" kind="show" identifier="segueStartToGitExplanation" id="QOT-mf-B0Y"/>
+                                    <segue destination="B73-IV-bIY" kind="show" identifier="segueStartToGitExplanation" id="zaa-YI-b9n"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zHu-kp-JL6">
@@ -62,6 +62,9 @@
                                 <rect key="frame" x="80" y="151" width="49" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Zurück"/>
+                                <connections>
+                                    <action selector="backToPreviousController:" destination="BdD-xA-e4V" eventType="touchUpInside" id="H1e-P5-HOj"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -69,16 +72,19 @@
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="OWa-13-19g" kind="unwind" identifier="segueStartTutorialToGitExplanation" unwindAction="backToGitExplanationControllerWithSegue:" id="eQ4-mq-wLI"/>
+                        <segue destination="OWa-13-19g" kind="unwind" identifier="segueStartTutorialToStart" unwindAction="backToStartControllerWithSegue:" id="imy-bo-5l7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c5u-NG-a5n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="OWa-13-19g" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1464.8" y="799.2503748125938"/>
         </scene>
         <!--GitExplanation-->
         <scene sceneID="CRv-tK-XPc">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3vp-qj-GG9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="XWj-Id-fLd" userLabel="Exit" sceneMemberID="exit"/>
                 <viewController title="GitExplanation" id="B73-IV-bIY" customClass="GitExplanationViewController" customModule="Git_Hub__Tutorial" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Su1-y0-8qB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -96,7 +102,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Zurück"/>
                                 <connections>
-                                    <segue destination="XWj-Id-fLd" kind="unwind" unwindAction="unwindToStartWithSegue:" id="QzR-SP-0cA"/>
+                                    <segue destination="XWj-Id-fLd" kind="unwind" identifier="segueGitExplanationToStart" unwindAction="backToStartControllerWithSegue:" id="yXv-Ki-6hk"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XLd-YO-Csp">
@@ -114,6 +120,8 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3vp-qj-GG9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="XWj-Id-fLd" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1504.8" y="-361.16941529235385"/>
         </scene>
