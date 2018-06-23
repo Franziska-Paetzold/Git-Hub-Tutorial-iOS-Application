@@ -87,16 +87,39 @@
             <objects>
                 <viewController title="GitExplanation" id="B73-IV-bIY" customClass="GitExplanationViewController" customModule="Git_Hub__Tutorial" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Su1-y0-8qB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Git ist VCS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27B-GY-TkK">
-                                <rect key="frame" x="179" y="203" width="82" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zOZ-04-7SX">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Im-ah-zJ7">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XLd-YO-Csp">
+                                                <rect key="frame" x="120" y="1085" width="135" height="30"/>
+                                                <state key="normal" title="Starte das Tutorial"/>
+                                                <connections>
+                                                    <segue destination="BdD-xA-e4V" kind="show" identifier="segueGitExplanationToStartTutorial" id="4wt-Os-Gx1"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="XLd-YO-Csp" secondAttribute="bottom" constant="85" id="4It-ks-Zi3"/>
+                                            <constraint firstItem="XLd-YO-Csp" firstAttribute="leading" secondItem="4Im-ah-zJ7" secondAttribute="leading" constant="120" id="Nm6-46-Piz"/>
+                                            <constraint firstAttribute="trailing" secondItem="XLd-YO-Csp" secondAttribute="trailing" constant="120" id="d7g-CP-Q37"/>
+                                            <constraint firstAttribute="height" constant="1200" id="rJb-kT-Tv7"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="4Im-ah-zJ7" firstAttribute="top" secondItem="zOZ-04-7SX" secondAttribute="top" id="H1F-q4-fBg"/>
+                                    <constraint firstAttribute="bottom" secondItem="4Im-ah-zJ7" secondAttribute="bottom" id="U3Y-Rv-WqN"/>
+                                    <constraint firstAttribute="trailing" secondItem="4Im-ah-zJ7" secondAttribute="trailing" id="hi2-56-obd"/>
+                                    <constraint firstItem="4Im-ah-zJ7" firstAttribute="leading" secondItem="zOZ-04-7SX" secondAttribute="leading" id="p99-aO-1vp"/>
+                                </constraints>
+                            </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zQj-oG-QRn" userLabel="Zurück">
                                 <rect key="frame" x="130" y="45" width="49" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -105,20 +128,28 @@
                                     <segue destination="XWj-Id-fLd" kind="unwind" identifier="segueGitExplanationToStart" unwindAction="backToStartControllerWithSegue:" id="yXv-Ki-6hk"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XLd-YO-Csp">
-                                <rect key="frame" x="124" y="459" width="126" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Starte das Tutorial"/>
-                                <connections>
-                                    <segue destination="BdD-xA-e4V" kind="show" identifier="segueGitExplanationToStartTutorial" id="4wt-Os-Gx1"/>
-                                </connections>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Git ist VCS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27B-GY-TkK">
+                                <rect key="frame" x="197" y="1200" width="82" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="zOZ-04-7SX" firstAttribute="top" secondItem="Su1-y0-8qB" secondAttribute="top" id="AlY-mD-pjr"/>
+                            <constraint firstItem="zOZ-04-7SX" firstAttribute="leading" secondItem="ayr-PV-fOY" secondAttribute="leading" id="Cb2-lS-F6y"/>
+                            <constraint firstItem="zOZ-04-7SX" firstAttribute="height" secondItem="Su1-y0-8qB" secondAttribute="height" id="dhh-sg-rhq"/>
+                            <constraint firstItem="4Im-ah-zJ7" firstAttribute="width" secondItem="Su1-y0-8qB" secondAttribute="width" id="kaL-TL-vgp"/>
+                            <constraint firstItem="ayr-PV-fOY" firstAttribute="trailing" secondItem="zOZ-04-7SX" secondAttribute="trailing" id="khc-wC-ofb"/>
+                            <constraint firstItem="zOZ-04-7SX" firstAttribute="width" secondItem="Su1-y0-8qB" secondAttribute="width" id="kyy-dW-jMg"/>
+                            <constraint firstItem="27B-GY-TkK" firstAttribute="top" secondItem="zOZ-04-7SX" secondAttribute="bottom" id="uhv-ox-xLU"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ayr-PV-fOY"/>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <size key="freeformSize" width="375" height="1200"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3vp-qj-GG9" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="XWj-Id-fLd" userLabel="Exit" sceneMemberID="exit"/>
