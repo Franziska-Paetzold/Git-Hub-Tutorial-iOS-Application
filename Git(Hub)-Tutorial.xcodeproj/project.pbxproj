@@ -58,9 +58,7 @@
 		382E3F4A20D9397B001761C1 /* Git(Hub)-Tutorial */ = {
 			isa = PBXGroup;
 			children = (
-				38DD8ACB20DAA3D4000E4E34 /* GitExplanationViewController.swift */,
-				38DD8ACC20DAA3D4000E4E34 /* StartTutorialViewController.swift */,
-				38DD8ACD20DAA3D4000E4E34 /* ViewController.swift */,
+				38835D4120DFDA6600164A04 /* Controller */,
 				382E3F4B20D9397B001761C1 /* AppDelegate.swift */,
 				382E3F4F20D9397B001761C1 /* Main.storyboard */,
 				382E3F5220D9397C001761C1 /* Assets.xcassets */,
@@ -68,6 +66,16 @@
 				382E3F5720D9397C001761C1 /* Info.plist */,
 			);
 			path = "Git(Hub)-Tutorial";
+			sourceTree = "<group>";
+		};
+		38835D4120DFDA6600164A04 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				38DD8ACB20DAA3D4000E4E34 /* GitExplanationViewController.swift */,
+				38DD8ACC20DAA3D4000E4E34 /* StartTutorialViewController.swift */,
+				38DD8ACD20DAA3D4000E4E34 /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,9 +295,11 @@
 		382E3F5B20D9397C001761C1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L4J3393FVC;
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
 				INFOPLIST_FILE = "Git(Hub)-Tutorial/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -305,9 +315,11 @@
 		382E3F5C20D9397C001761C1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L4J3393FVC;
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
 				INFOPLIST_FILE = "Git(Hub)-Tutorial/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
