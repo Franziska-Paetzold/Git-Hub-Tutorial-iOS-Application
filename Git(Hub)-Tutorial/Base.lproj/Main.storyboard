@@ -18,28 +18,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUL-OV-b5b">
-                                <rect key="frame" x="100" y="232" width="175" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUL-OV-b5b">
+                                <rect key="frame" x="80" y="232" width="195" height="30"/>
                                 <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="175" id="jSw-4X-yLg"/>
                                     <constraint firstAttribute="height" constant="30" id="vcp-5j-02o"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Was ist Git(Hub)?"/>
+                                <state key="normal" title="Was ist Git(Hub) überhaupt?"/>
                                 <connections>
                                     <segue destination="B73-IV-bIY" kind="show" identifier="segueStartToGitExplanation" id="zaa-YI-b9n"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zHu-kp-JL6">
-                                <rect key="frame" x="100" y="382" width="175" height="30"/>
+                                <rect key="frame" x="106" y="382" width="169" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="175" id="XNc-3H-bwN"/>
-                                    <constraint firstAttribute="height" constant="30" id="dLt-pd-Feq"/>
-                                </constraints>
                                 <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Starte das Tutorial"/>
+                                <state key="normal" title="Starte direkt das Tutorial"/>
                                 <connections>
                                     <segue destination="BdD-xA-e4V" kind="show" identifier="segueStartToStartTutorial" id="724-yy-cBD"/>
                                 </connections>
@@ -47,14 +43,9 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="zHu-kp-JL6" firstAttribute="top" secondItem="ZUL-OV-b5b" secondAttribute="bottom" constant="120" id="8mz-cD-H98"/>
-                            <constraint firstItem="ZUL-OV-b5b" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="212" id="A8h-Iy-8W3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZUL-OV-b5b" secondAttribute="trailing" constant="100" id="DNx-iv-lKk"/>
-                            <constraint firstItem="zHu-kp-JL6" firstAttribute="top" secondItem="ZUL-OV-b5b" secondAttribute="bottom" constant="120" id="F6h-GH-fKt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zHu-kp-JL6" secondAttribute="bottom" constant="255" id="Xzu-Fw-CEr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zHu-kp-JL6" secondAttribute="trailing" constant="100" id="dAa-lN-6wQ"/>
-                            <constraint firstItem="zHu-kp-JL6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="gE2-MN-P5m"/>
-                            <constraint firstItem="ZUL-OV-b5b" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="gah-Qa-wwk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -68,7 +59,7 @@
             <objects>
                 <viewController storyboardIdentifier="StartTutorialView" title="StartTutorialView" id="BdD-xA-e4V" customClass="StartTutorialViewController" customModule="Git_Hub__Tutorial" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sp4-6P-a5U">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Huijuijui es geht loooos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hf0-db-FEV">
@@ -87,15 +78,98 @@
                                     <action selector="backToPreviousController:" destination="BdD-xA-e4V" eventType="touchUpInside" id="H1e-P5-HOj"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Virstellung des Szenarios, Vorstellung Captain Git etc. " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FAx-3u-7hp">
-                                <rect key="frame" x="36" y="131" width="240" height="62"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FAx-3u-7hp">
+                                <rect key="frame" x="20" y="78" width="309" height="83"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Um uns im folgenden Git(Hub)-Tutorial nicht ausschließlich über Computer, Netzwerke und Terminalbefehle zu unterhalten, verbinden wir das ganze mit der Schifffahrt.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NMY-TD-iBV">
+                                <rect key="frame" x="20" y="169" width="0.0" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="... aber ja, ,mit der Schiffahrt! Und an dieser Stelle präsentiere ich dir auch gleich mal den Kapitän:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4YS-v5-qLf">
+                                <rect key="frame" x="16" y="222" width="309" height="73"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bMU-6m-Jdj">
+                                <rect key="frame" x="16" y="303" width="309" height="171"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Du bist Teil der Schiffsbesatzung! Der Kapitän braucht dich, denn was er am besten kann, ist Befehle zu erteilen. Diese führt er selbst nicht aus. Er nennt den Namen der Seemännin oder des Seemanns, der sein Befehl ausführen soll und danach gibt er an was getan werden muss. Ich muss dir leider jetzt schon beichten, in diesem Tutorial werden du und der Kapitän die einzigen Seeleute sein. </string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="&quot;Hey sag mal, wie heißt du eigentlich?&quot;" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5ut-A6-y0g">
+                                <rect key="frame" x="173" y="482" width="152" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Man nennt mich: " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1mF-TJ-gnE">
+                                <rect key="frame" x="173" y="556" width="152" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="&quot;Ach weißt du, Namen kann ich mir so schlecht merken. Ich werde dich in Zukunft einfach &quot;git&quot; nennen!&quot;" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VWI-1n-eOh">
+                                <rect key="frame" x="85" y="600" width="240" height="68"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kIi-2h-9s7">
+                                <rect key="frame" x="16" y="676" width="309" height="105"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Alles klar /(Name), oder soll ich lieber git zu dir sagen? ;) Sobald du einen Befehl des Kaptains hörst, der mit deinem neuen Namen beginnt, ist es an dir diese Aufgabe beschreiten.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yLD-UN-RG8">
+                                <rect key="frame" x="9" y="796" width="323" height="133"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Im folgenden wird dir Git mit der Steuerung über das Terminal erklärt. Mittlerweile gibt es auch viele Git-Clients, die die Nutzung mit Benutzeroberflächten vereinfachen sollen. Um Git in seinem vollen Umfang nutzen zu können, wirst du allerdings nicht um das Terminal herumkommen. </string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Rlv-GT-1BC">
+                                <rect key="frame" x="9" y="937" width="323" height="84"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Assiziationen zum echten Leben mit Git: Wie du vielleicht schon mitbekommen hast, stellt der Kapitän dein Terminal dar und ja, ich weiß, du glaubt es kaum, du bist Git. </string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="&quot;Mit der Schiffahrt?&quot; denkst du dir vielleicht..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Ljl-9s-I53">
+                                <rect key="frame" x="20" y="169" width="240" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2SZ-xx-FTb">
+                                <rect key="frame" x="9" y="1029" width="323" height="87"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Merke: Nur wo "git" dran steht ist auch "Git" drin. Möchtest du also mit der Software arbeiten, ist das erste Wort in der Behfehlsleiste (engl: command line): "git".</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dtc-tI-tcL">
-                                <rect key="frame" x="166" y="569" width="42" height="30"/>
+                                <rect key="frame" x="166" y="1124" width="42" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="weiter"/>
                                 <connections>
@@ -112,6 +186,7 @@
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <size key="freeformSize" width="375" height="1200"/>
                     <connections>
                         <segue destination="OWa-13-19g" kind="unwind" identifier="segueStartTutorialToGitExplanation" unwindAction="backToGitExplanationControllerWithSegue:" id="eQ4-mq-wLI"/>
                         <segue destination="OWa-13-19g" kind="unwind" identifier="segueStartTutorialToStart" unwindAction="backToStartControllerWithSegue:" id="imy-bo-5l7"/>
@@ -120,7 +195,170 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c5u-NG-a5n" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="OWa-13-19g" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1464.8" y="799.2503748125938"/>
+            <point key="canvasLocation" x="1465" y="920"/>
+        </scene>
+        <!--promisView-->
+        <scene sceneID="nuw-YK-FLi">
+            <objects>
+                <viewController title="promisView" id="5rG-VQ-Pi0" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Tfw-Bj-4XQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="&quot;Bevor wir uns auf den Weg in das Git-Erlernen-Abenteuer machen, muss ich noch ein paar Sachen sicher stellen.&quot;" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JvO-Cm-qzN">
+                                <rect key="frame" x="16" y="20" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XeT-UY-NYD">
+                                <rect key="frame" x="60" y="318" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dap-ue-gdM">
+                                <rect key="frame" x="60" y="419" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nig-cS-Q8w">
+                                <rect key="frame" x="60" y="243" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Ich möchte den Kapitän unterstützen." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LyB-xl-e5r">
+                                <rect key="frame" x="99" y="243" width="240" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Ich verspreche mir alle Notationen der Erzählerin aufmerksam durchzulesen." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bl3-5E-Bb9">
+                                <rect key="frame" x="99" y="318" width="240" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Ja, ich möchte Git erlernen und werde deswegen keine Seite überspringen." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="EvT-V3-iyS">
+                                <rect key="frame" x="99" y="419" width="240" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MWI-oU-rij">
+                                <rect key="frame" x="87" y="563" width="159" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Aye, aye Kapitän!"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="UbD-fc-KQF"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ODt-bx-ja8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="776.79999999999995" y="1835.5322338830586"/>
+        </scene>
+        <!--SmapleView-->
+        <scene sceneID="OeF-Qi-GE7">
+            <objects>
+                <viewController title="SmapleView" id="CP7-wS-7XA" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="x57-yc-Gbr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="&quot;Nun gut, junger Schiffneuling. Zu allererst müssen wir zu unserem Heimathafen gelangen.&quot;" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hFA-Os-mqS">
+                                <rect key="frame" x="24" y="42" width="303" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="&quot;cd benutzer/kapitaen/heimathafen&quot;" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6d8-2h-vWA">
+                                <rect key="frame" x="24" y="119" width="303" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Assoziation: Der Heimathafen ist der Projektordner indem du die Datein gespeichert hast, die du mit Git verwalten möchtest.  " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hLR-Sj-pta">
+                                <rect key="frame" x="24" y="319" width="303" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ko2-mC-J5a">
+                                <rect key="frame" x="24" y="500" width="303" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Beachte: Als Git(Hub)- und vielleicht auch Terminalneuling, achte darauf in den richten Ordner zu wechseln und nicht nur in den Ordner, indem sich dein Zielordner befindet.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Merke: Zu beginnt musst du mit dem Terminal zum navigieren. (Change Directory) Diese Aktion wird nicht über Git gesteuert. " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="N8x-62-pQu">
+                                <rect key="frame" x="24" y="413" width="303" height="66.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="PBF-Hc-OXM"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PHk-rO-50O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1465" y="1836"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Vvg-hN-6jC">
+            <objects>
+                <viewController id="OhY-jn-fj2" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wJj-2C-dpA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cx7-30-GDp">
+                                <rect key="frame" x="16" y="20" width="333" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">"Es ist offensichtlich, dass wir für unsere Reise noch ein Schiff benötigen. Du siehst mir aus als könntst du ohne Probleme slebst eins bauen!"</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="&quot;git init&quot;" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VDs-gJ-7bj">
+                                <rect key="frame" x="30" y="108" width="119" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Deine erste Aufgabe!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="aId-NA-jnF">
+                                <rect key="frame" x="47" y="284" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="vad-Ac-LCp"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RXc-zX-f8I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2112.8000000000002" y="1835.5322338830586"/>
         </scene>
         <!--GitExplanation-->
         <scene sceneID="CRv-tK-XPc">
@@ -219,8 +457,16 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XLd-YO-Csp">
-                                                <rect key="frame" x="116" y="1187" width="135" height="30"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Also leg am besten gleich los und ..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Poc-mH-zcb">
+                                                <rect key="frame" x="20" y="1104" width="326" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XLd-YO-Csp">
+                                                <rect key="frame" x="116" y="1173" width="135" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Starte das Tutorial"/>
@@ -228,20 +474,10 @@
                                                     <segue destination="BdD-xA-e4V" kind="show" identifier="segueGitExplanationToStartTutorial" id="4wt-Os-Gx1"/>
                                                 </connections>
                                             </button>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Also leg am besten gleich los und ..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Poc-mH-zcb">
-                                                <rect key="frame" x="20" y="1129" width="326" height="50"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="XLd-YO-Csp" secondAttribute="bottom" constant="85" id="4It-ks-Zi3"/>
                                             <constraint firstItem="zQj-oG-QRn" firstAttribute="leading" secondItem="4Im-ah-zJ7" secondAttribute="leading" constant="20" id="7XG-Q2-roJ"/>
-                                            <constraint firstItem="XLd-YO-Csp" firstAttribute="leading" secondItem="4Im-ah-zJ7" secondAttribute="leading" constant="120" id="Nm6-46-Piz"/>
-                                            <constraint firstAttribute="trailing" secondItem="XLd-YO-Csp" secondAttribute="trailing" constant="120" id="d7g-CP-Q37"/>
                                             <constraint firstItem="zQj-oG-QRn" firstAttribute="top" secondItem="4Im-ah-zJ7" secondAttribute="top" constant="20" id="gXd-Fd-fMQ"/>
                                             <constraint firstAttribute="height" constant="1200" id="rJb-kT-Tv7"/>
                                         </constraints>
@@ -320,7 +556,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fYH-aF-ddT" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="K3Y-4e-cIx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2184.8000000000002" y="798.35082458770626"/>
+            <point key="canvasLocation" x="2228" y="798"/>
         </scene>
         <!--CommandGameView-->
         <scene sceneID="lYS-aB-Afh">
@@ -359,12 +595,12 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K73-oD-Q3f" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="enq-Tc-x3E" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2909.5999999999999" y="797.45127436281871"/>
+            <point key="canvasLocation" x="2937" y="798"/>
         </scene>
-        <!--View Controller-->
+        <!--CommandFeedbackView-->
         <scene sceneID="IxV-XD-FWe">
             <objects>
-                <viewController id="n9S-Hj-8tr" sceneMemberID="viewController">
+                <viewController title="CommandFeedbackView" id="n9S-Hj-8tr" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2MU-bk-xKw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -388,6 +624,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="4wt-Os-Gx1"/>
+        <segue reference="724-yy-cBD"/>
     </inferredMetricsTieBreakers>
 </document>
