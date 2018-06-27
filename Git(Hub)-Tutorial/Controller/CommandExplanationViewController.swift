@@ -16,12 +16,14 @@ class CommandExplanationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //create main view
+        //=============initializing view tools ============
+        
+        //initialize main view
         mainView = UIView()
         mainView.backgroundColor = .red
         self.view.addSubview(mainView)
         
-        //create back button
+        //initialize back button
         backButton = UIButton()
         backButton.setTitle("zurück", for: .normal)
         backButton.titleLabel?.textAlignment = .center
@@ -29,6 +31,7 @@ class CommandExplanationViewController: UIViewController {
         backButton.setTitleColor(.white, for: .normal)
         mainView.addSubview(backButton)
         
+        //============adding constraints ============
         
         //add constrains to main view
         mainView.translatesAutoresizingMaskIntoConstraints = false
@@ -38,28 +41,20 @@ class CommandExplanationViewController: UIViewController {
         mainView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 1).isActive = true
         
         backButton.translatesAutoresizingMaskIntoConstraints = false
-    backButton.leftAnchor.constraintEqualToSystemSpacingAfter(mainView.leftAnchor, multiplier: 0.1)
+        backButton.leftAnchor.constraintEqualToSystemSpacingAfter(mainView.leftAnchor, multiplier: 0.5) //ToDo: doesnt work
         
-        //backButton.addTarget(self, action: , for: <#T##UIControlEvents#>)
+        //============adding logic ============
+        
+        //adds back to StartTutorial function to the back button
+        backButton.addTarget(self, action: #selector(backButtonFunction(_: )), for: .touchUpInside)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func backButtonFunction(_ sender: UIButton){
+        self.performSegue(withIdentifier: "segueCommandExplanationToStartTutorial", sender: nil)
     }
     
     @IBAction func backToCommandExplanationController(segue: UIStoryboardSegue){
         print("Unwind to CommandExplanation")
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

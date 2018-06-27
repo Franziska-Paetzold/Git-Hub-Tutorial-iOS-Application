@@ -563,8 +563,13 @@
         <!--CommandExplanationView-->
         <scene sceneID="GHZ-VP-aWX">
             <objects>
-                <viewController title="CommandExplanationView" id="GdX-cM-pYU" customClass="CommandExplanationViewController" customModule="Git_Hub__Tutorial" customModuleProvider="target" sceneMemberID="viewController"/>
+                <viewController title="CommandExplanationView" id="GdX-cM-pYU" customClass="CommandExplanationViewController" customModule="Git_Hub__Tutorial" customModuleProvider="target" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="K3Y-4e-cIx" kind="unwind" identifier="segueCommandExplanationToStartTutorial" unwindAction="backToStartTutorialControllerWithSegue:" id="y30-Ea-FhU"/>
+                    </connections>
+                </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fYH-aF-ddT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="K3Y-4e-cIx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2228" y="798"/>
         </scene>
