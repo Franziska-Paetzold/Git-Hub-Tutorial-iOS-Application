@@ -8,6 +8,7 @@ Tutorial to learn the essentials of Git and GitHub on an iPhone
 *Code contains solutions for:*
 - unwinding multiple segues from diffrent views pointing on one single view
 - use buttons as checkboxes
+- create a view programmatically (CommandExplanation)
 
 sources for placeholder/ sample pictures in CommandGame(MVC):
 25.06.2018
