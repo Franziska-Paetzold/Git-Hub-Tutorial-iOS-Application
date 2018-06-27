@@ -6,7 +6,8 @@ Tutorial to learn the essentials of Git and GitHub on an iPhone
 - Base SDK: iOS 11.4
 
 *Code contains solutions for:*
-- Unwinding multiple segues from diffrent views pointing on one single view
+- unwinding multiple segues from diffrent views pointing on one single view
+- use buttons as checkboxes
 
 sources for placeholder/ sample pictures in CommandGame(MVC):
 25.06.2018
