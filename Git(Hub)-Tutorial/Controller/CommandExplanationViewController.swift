@@ -10,10 +10,37 @@ import UIKit
 
 class CommandExplanationViewController: UIViewController {
 
+    var mainView: UIView!
+    var backButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        //create main view
+        mainView = UIView()
+        mainView.backgroundColor = .red
+        self.view.addSubview(mainView)
+        
+        //create back button
+        backButton = UIButton()
+        backButton.setTitle("zurück", for: .normal)
+        backButton.titleLabel?.textAlignment = .center
+        backButton.backgroundColor = .black
+        backButton.setTitleColor(.white, for: .normal)
+        mainView.addSubview(backButton)
+        
+        
+        //add constrains to main view
+        mainView.translatesAutoresizingMaskIntoConstraints = false
+        mainView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        mainView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        mainView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1).isActive = true
+        mainView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 1).isActive = true
+        
+        backButton.translatesAutoresizingMaskIntoConstraints = false
+    backButton.leftAnchor.constraintEqualToSystemSpacingAfter(mainView.leftAnchor, multiplier: 0.1)
+        
+        //backButton.addTarget(self, action: , for: <#T##UIControlEvents#>)
     }
 
     override func didReceiveMemoryWarning() {
