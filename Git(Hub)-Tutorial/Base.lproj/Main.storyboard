@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5rG-VQ-Pi0">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -200,42 +200,13 @@
         <!--promisView-->
         <scene sceneID="nuw-YK-FLi">
             <objects>
-                <viewController title="promisView" id="5rG-VQ-Pi0" sceneMemberID="viewController">
+                <viewController title="promisView" id="5rG-VQ-Pi0" customClass="PromiseViewController" customModule="Git_Hub__Tutorial" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tfw-Bj-4XQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="&quot;Bevor wir uns auf den Weg in das Git-Erlernen-Abenteuer machen, muss ich noch ein paar Sachen sicher stellen.&quot;" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JvO-Cm-qzN">
-                                <rect key="frame" x="16" y="20" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XeT-UY-NYD">
-                                <rect key="frame" x="60" y="318" width="31" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dap-ue-gdM">
-                                <rect key="frame" x="60" y="419" width="31" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nig-cS-Q8w">
-                                <rect key="frame" x="60" y="243" width="31" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Ich möchte den Kapitän unterstützen." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LyB-xl-e5r">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" text="Ich möchte den Kapitän unterstützen." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LyB-xl-e5r">
                                 <rect key="frame" x="99" y="243" width="240" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -258,9 +229,53 @@
                                 <rect key="frame" x="87" y="563" width="159" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Aye, aye Kapitän!"/>
+                                <connections>
+                                    <action selector="nextPage:" destination="5rG-VQ-Pi0" eventType="touchUpInside" id="2KF-Vm-B5N"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="of4-uq-EK9">
+                                <rect key="frame" x="60" y="254" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="QmE-DX-Xxu"/>
+                                    <constraint firstAttribute="width" constant="20" id="zhE-2h-xyS"/>
+                                </constraints>
+                                <state key="normal" image="unclicked"/>
+                                <state key="selected" image="clicked"/>
+                                <connections>
+                                    <action selector="firstButtonClicked:" destination="5rG-VQ-Pi0" eventType="touchUpInside" id="MaN-rM-44s"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" text="&quot;Bevor wir uns auf den Weg in das Git-Erlernen-Abenteuer machen, muss ich noch ein paar Sachen sicher stellen.&quot;" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JvO-Cm-qzN">
+                                <rect key="frame" x="16" y="20" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YZn-ZB-FSs">
+                                <rect key="frame" x="60" y="341" width="40" height="40"/>
+                                <state key="normal" title="Button" image="unclicked"/>
+                                <state key="selected" image="clicked"/>
+                                <connections>
+                                    <action selector="secondButtonClicked:" destination="5rG-VQ-Pi0" eventType="touchUpInside" id="q7f-FQ-IAX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T9f-wa-aG4">
+                                <rect key="frame" x="40" y="438" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="unclicked"/>
+                                <state key="selected" image="clicked"/>
+                                <connections>
+                                    <action selector="thirdButtonClicked:" destination="5rG-VQ-Pi0" eventType="touchUpInside" id="LIJ-Hw-BlO"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="of4-uq-EK9" firstAttribute="top" secondItem="JvO-Cm-qzN" secondAttribute="bottom" constant="106" id="1Pf-Mo-hCC"/>
+                            <constraint firstItem="LyB-xl-e5r" firstAttribute="leading" secondItem="of4-uq-EK9" secondAttribute="trailing" constant="19" id="EtQ-R8-9mj"/>
+                            <constraint firstItem="of4-uq-EK9" firstAttribute="leading" secondItem="UbD-fc-KQF" secondAttribute="leading" constant="60" id="HEr-1I-szw"/>
+                            <constraint firstItem="YZn-ZB-FSs" firstAttribute="top" secondItem="of4-uq-EK9" secondAttribute="bottom" constant="65" id="S6o-al-wnD"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="UbD-fc-KQF"/>
                     </view>
                 </viewController>
@@ -401,7 +416,7 @@
                                                 <rect key="frame" x="20" y="220" width="326" height="351"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <mutableString key="text">Das bedeutet, dass text_v1.txt, text_v2.txt etc. durch Git abgelöst werden. Mit Git kannst du jeden beliebigen Dateityp oder jedes beliebige Projekt versionieren. Du kannst mit Git also genauso gut den Projektordner für deine Bachelorarbeit als für Programmierprojekte verwenden. Dabei wird dir ermöglicht zu jeder Zeit zu einer älteren Version deines Projekts zurück kehren zu können. Des Weiteren hast du die Möglichkeit über ein Netzwerk mit anderen Menschen an deinem Projekt zusammen zu arbeiten. Über Git kannst du dir anzeigen lassen was, wann von wem geändert wurde und ob du diese Änderungen für die Weiterarbeit an deinem Projekt verwenden möchtest.</mutableString>
+                                                <string key="text">Das bedeutet, dass text_v1.txt, text_v2.txt etc. durch Git abgelöst werden. Mit Git kannst du jeden beliebigen Dateityp oder jedes beliebige Projekt versionieren. Du kannst mit Git also genauso gut den Projektordner für deine Bachelorarbeit als für Programmierprojekte verwenden. Dabei wird dir ermöglicht zu jeder Zeit zu einer älteren Version deines Projekts zurück kehren zu können. Des Weiteren hast du die Möglichkeit über ein Netzwerk mit anderen Menschen an deinem Projekt zusammen zu arbeiten. Über Git kannst du dir anzeigen lassen was, wann von wem geändert wurde und ob du diese Änderungen für die Weiterarbeit an deinem Projekt verwenden möchtest.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
@@ -623,6 +638,10 @@
             <point key="canvasLocation" x="3610" y="799"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="clicked" width="40" height="40"/>
+        <image name="unclicked" width="40" height="40"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="724-yy-cBD"/>
     </inferredMetricsTieBreakers>
