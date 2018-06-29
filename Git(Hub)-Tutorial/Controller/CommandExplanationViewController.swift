@@ -27,6 +27,7 @@ class CommandExplanationViewController: UIViewController {
         backButton = UIButton()
         backButton.setTitle("zurück", for: .normal)
         backButton.titleLabel?.textAlignment = .center
+        backButton.titleLabel?.adjustsFontSizeToFitWidth = true
         backButton.backgroundColor = .black
         backButton.setTitleColor(.white, for: .normal)
         mainView.addSubview(backButton)
@@ -39,9 +40,21 @@ class CommandExplanationViewController: UIViewController {
         mainView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         mainView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1).isActive = true
         mainView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 1).isActive = true
+        /*
+        mainView.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor)
+        mainView.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor)
+        mainView.topAnchor.constraintEqualToSystemSpacingBelow(view.safeAreaLayoutGuide.topAnchor, multiplier: 1.0)
+        view.safeAreaLayoutGuide.bottomAnchor.constraintEqualToSystemSpacingBelow(mainView.bottomAnchor, multiplier: 1.0)
+        */
         
+        //enables autolayout for the button
         backButton.translatesAutoresizingMaskIntoConstraints = false
-        backButton.leftAnchor.constraintEqualToSystemSpacingAfter(mainView.leftAnchor, multiplier: 0.5) //ToDo: doesnt work
+        
+       backButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        backButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        backButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 40).isActive = true
+        backButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
+        backButton.leftAnchor.constraintEqualToSystemSpacingAfter(mainView.leftAnchor, multiplier: 0.5).isActive = true//ToDo: doesnt work
         
         //============adding logic ============
         

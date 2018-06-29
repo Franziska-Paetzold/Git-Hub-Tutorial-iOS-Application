@@ -195,7 +195,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c5u-NG-a5n" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="OWa-13-19g" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1465" y="920"/>
+            <point key="canvasLocation" x="1146" y="1047"/>
         </scene>
         <!--promisView-->
         <scene sceneID="nuw-YK-FLi">
@@ -336,7 +336,6 @@
         <!--View Controller-->
         <scene sceneID="bdV-9n-53w">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Z8o-St-fuI" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="F1H-FX-Q4Z" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VQo-yk-77h">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -367,6 +366,7 @@
                         <viewLayoutGuide key="safeArea" id="CmC-NP-8Ir"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z8o-St-fuI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2804" y="1836"/>
         </scene>
@@ -588,8 +588,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jzh-SY-F2l">
-                                <rect key="frame" x="20" y="40" width="47" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jzh-SY-F2l">
+                                <rect key="frame" x="20" y="40" width="50" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.65627189730000002" blue="0.63797433039999996" alpha="1" colorSpace="deviceRGB"/>
                                 <state key="normal" title="zurück">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -610,7 +610,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K73-oD-Q3f" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="enq-Tc-x3E" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2937" y="798"/>
+            <point key="canvasLocation" x="2936.8000000000002" y="797.45127436281871"/>
         </scene>
         <!--CommandFeedbackView-->
         <scene sceneID="IxV-XD-FWe">
@@ -643,6 +643,6 @@
         <image name="unclicked" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="724-yy-cBD"/>
+        <segue reference="4wt-Os-Gx1"/>
     </inferredMetricsTieBreakers>
 </document>
