@@ -24,7 +24,7 @@ class CommandGameViewController: UIViewController {
         let commandGameView = view as! SKView
         commandGameView.showsFPS = false
         
-        //game scene
+        //game "scene"
         commandGameModel = CommandGameModel(size: commandGameView.bounds.size)
         commandGameModel.scaleMode = .aspectFill //over the full screen
         
