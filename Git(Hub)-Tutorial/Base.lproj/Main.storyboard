@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CMT-kA-nPL">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -577,38 +577,14 @@
         <scene sceneID="lYS-aB-Afh">
             <objects>
                 <viewController title="CommandGameView" id="CMT-kA-nPL" customClass="CommandGameViewController" customModule="Git_Hub__Tutorial" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="B1f-Kf-oK2">
+                    <view key="view" contentMode="scaleToFill" id="B1f-Kf-oK2" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Git init spielierische Metapher " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mw8-gH-ZYd">
-                                <rect key="frame" x="16" y="100" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jzh-SY-F2l">
-                                <rect key="frame" x="20" y="40" width="50" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.65627189730000002" blue="0.63797433039999996" alpha="1" colorSpace="deviceRGB"/>
-                                <state key="normal" title="zurück">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="enq-Tc-x3E" kind="unwind" unwindAction="backToCommandExplanationControllerWithSegue:" id="QMQ-JA-Fdw"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="Jzh-SY-F2l" firstAttribute="leading" secondItem="E8J-HO-iCn" secondAttribute="leading" constant="20" id="IeS-VI-7tc"/>
-                            <constraint firstItem="Jzh-SY-F2l" firstAttribute="top" secondItem="E8J-HO-iCn" secondAttribute="top" constant="20" id="eEc-qb-zFO"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="E8J-HO-iCn"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K73-oD-Q3f" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="enq-Tc-x3E" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2936.8000000000002" y="797.45127436281871"/>
         </scene>

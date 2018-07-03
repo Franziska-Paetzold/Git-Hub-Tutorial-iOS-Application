@@ -11,6 +11,7 @@
 		382E3F5120D9397B001761C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 382E3F4F20D9397B001761C1 /* Main.storyboard */; };
 		382E3F5320D9397C001761C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 382E3F5220D9397C001761C1 /* Assets.xcassets */; };
 		382E3F5620D9397C001761C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 382E3F5420D9397C001761C1 /* LaunchScreen.storyboard */; };
+		3839A32620EB773400769A8C /* CommandGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3839A32520EB773400769A8C /* CommandGameModel.swift */; };
 		38835D4720E0FE1D00164A04 /* CommandGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38835D4620E0FE1D00164A04 /* CommandGameViewController.swift */; };
 		38835D4920E0FE4D00164A04 /* CommandExplanationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38835D4820E0FE4D00164A04 /* CommandExplanationViewController.swift */; };
 		38AA7A0820E38867008E7CAA /* promiseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AA7A0720E38867008E7CAA /* promiseViewController.swift */; };
@@ -26,6 +27,7 @@
 		382E3F5220D9397C001761C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		382E3F5520D9397C001761C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		382E3F5720D9397C001761C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3839A32520EB773400769A8C /* CommandGameModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandGameModel.swift; sourceTree = "<group>"; };
 		38835D4620E0FE1D00164A04 /* CommandGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandGameViewController.swift; sourceTree = "<group>"; };
 		38835D4820E0FE4D00164A04 /* CommandExplanationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandExplanationViewController.swift; sourceTree = "<group>"; };
 		38AA7A0720E38867008E7CAA /* promiseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = promiseViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 		382E3F4A20D9397B001761C1 /* Git(Hub)-Tutorial */ = {
 			isa = PBXGroup;
 			children = (
+				3839A32420EB771800769A8C /* Models */,
 				38835D4120DFDA6600164A04 /* Controller */,
 				382E3F4B20D9397B001761C1 /* AppDelegate.swift */,
 				382E3F4F20D9397B001761C1 /* Main.storyboard */,
@@ -72,6 +75,14 @@
 				382E3F5720D9397C001761C1 /* Info.plist */,
 			);
 			path = "Git(Hub)-Tutorial";
+			sourceTree = "<group>";
+		};
+		3839A32420EB771800769A8C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3839A32520EB773400769A8C /* CommandGameModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		38835D4120DFDA6600164A04 /* Controller */ = {
@@ -161,6 +172,7 @@
 				38835D4720E0FE1D00164A04 /* CommandGameViewController.swift in Sources */,
 				382E3F4C20D9397B001761C1 /* AppDelegate.swift in Sources */,
 				38835D4920E0FE4D00164A04 /* CommandExplanationViewController.swift in Sources */,
+				3839A32620EB773400769A8C /* CommandGameModel.swift in Sources */,
 				38AA7A0820E38867008E7CAA /* promiseViewController.swift in Sources */,
 				38DD8ACF20DAA3D4000E4E34 /* StartTutorialViewController.swift in Sources */,
 				38DD8AD020DAA3D4000E4E34 /* ViewController.swift in Sources */,
