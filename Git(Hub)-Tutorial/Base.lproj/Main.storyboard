@@ -295,7 +295,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ODt-bx-ja8" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="zGx-ZW-Zkm" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2030" y="834"/>
+            <point key="canvasLocation" x="2028" y="1047"/>
         </scene>
         <!--SmapleView-->
         <scene sceneID="OeF-Qi-GE7">
@@ -348,7 +348,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PHk-rO-50O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1465" y="1836"/>
+            <point key="canvasLocation" x="3114" y="1804"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="bdV-9n-53w">
@@ -385,7 +385,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z8o-St-fuI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2804" y="1836"/>
+            <point key="canvasLocation" x="4454" y="1804"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Vvg-hN-6jC">
@@ -424,7 +424,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RXc-zX-f8I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2112.8000000000002" y="1835.5322338830586"/>
+            <point key="canvasLocation" x="3762" y="1804"/>
         </scene>
         <!--GitExplanation-->
         <scene sceneID="CRv-tK-XPc">
@@ -583,12 +583,13 @@
                 <viewController title="CommandExplanationView" id="GdX-cM-pYU" customClass="CommandExplanationViewController" customModule="Git_Hub__Tutorial" customModuleProvider="target" sceneMemberID="viewController">
                     <connections>
                         <segue destination="K3Y-4e-cIx" kind="unwind" identifier="segueCommandExplanationToPromise" unwindAction="backToPromiseControllerWithSegue:" id="YNa-wI-Dnx"/>
+                        <segue destination="CMT-kA-nPL" kind="show" identifier="segueCommandExplanationToCommandGame" id="HqU-b7-vpc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fYH-aF-ddT" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="K3Y-4e-cIx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3078" y="833"/>
+            <point key="canvasLocation" x="3076" y="1046"/>
         </scene>
         <!--CommandGameView-->
         <scene sceneID="lYS-aB-Afh">
@@ -603,7 +604,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K73-oD-Q3f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3786" y="833"/>
+            <point key="canvasLocation" x="3783" y="1046"/>
         </scene>
         <!--CommandFeedbackView-->
         <scene sceneID="IxV-XD-FWe">
@@ -628,7 +629,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bik-bP-eRM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4458" y="834"/>
+            <point key="canvasLocation" x="4455" y="1047"/>
         </scene>
     </scenes>
     <resources>

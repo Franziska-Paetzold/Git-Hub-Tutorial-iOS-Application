@@ -12,18 +12,19 @@ class CommandExplanationViewController: UIViewController {
 
     var mainView: UIView!
     var backButton: UIButton!
+    var nextViewButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //=============initializing view tools ============
         
-        //initialize main view
+        //main view
         mainView = UIView()
         mainView.backgroundColor = .red
         self.view.addSubview(mainView)
         
-        //initialize back button
+        //back button
         backButton = UIButton()
         backButton.setTitle("zurück", for: .normal)
         backButton.titleLabel?.textAlignment = .center
@@ -32,9 +33,18 @@ class CommandExplanationViewController: UIViewController {
         backButton.setTitleColor(.white, for: .normal)
         mainView.addSubview(backButton)
         
+        //next view button
+        nextViewButton = UIButton()
+        nextViewButton.setTitle("weiter", for: .normal)
+        nextViewButton.titleLabel?.textAlignment = .center
+        nextViewButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        nextViewButton.backgroundColor = .green
+        nextViewButton.setTitleColor(.black, for: .normal)
+        mainView.addSubview(nextViewButton)
+        
         //============adding constraints ============
         
-        //add constrains to main view
+        //##### main view #####
         mainView.translatesAutoresizingMaskIntoConstraints = false
         mainView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         mainView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
@@ -47,6 +57,7 @@ class CommandExplanationViewController: UIViewController {
         view.safeAreaLayoutGuide.bottomAnchor.constraintEqualToSystemSpacingBelow(mainView.bottomAnchor, multiplier: 1.0)
         */
         
+        //##### back button #####
         //enables autolayout for the button
         backButton.translatesAutoresizingMaskIntoConstraints = false
         
@@ -56,15 +67,27 @@ class CommandExplanationViewController: UIViewController {
         backButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
         backButton.leftAnchor.constraintEqualToSystemSpacingAfter(mainView.leftAnchor, multiplier: 0.5).isActive = true//ToDo: doesnt work
         
+        //###### next view button #####
+        nextViewButton.translatesAutoresizingMaskIntoConstraints = false
+        nextViewButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        nextViewButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        nextViewButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 80).isActive = true
+        nextViewButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
+        
         //============ adding logic ============
         
         //adds back to StartTutorial function to the back button
-        backButton.addTarget(self, action: #selector(backButtonFunction(_: )), for: .touchUpInside)
+        backButton.addTarget(self, action: #selector(backToPrevoiusView(_:)), for: .touchUpInside)
+        nextViewButton.addTarget(self, action: #selector(goToNextView(_:)), for: .touchUpInside)
     }
     
     //============ functions to come and go back ============
-    @IBAction func backButtonFunction(_ sender: UIButton){
+    @IBAction func backToPrevoiusView(_ sender: UIButton){
         self.performSegue(withIdentifier: "segueCommandExplanationToPromise", sender: nil)
+    }
+    
+    @IBAction func goToNextView(_ sender: UIButton){
+        self.performSegue(withIdentifier: "segueCommandExplanationToCommandGame", sender: nil)
     }
     
     @IBAction func backToCommandExplanationController(segue: UIStoryboardSegue){
