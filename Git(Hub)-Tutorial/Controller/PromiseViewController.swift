@@ -66,6 +66,7 @@ class PromiseViewController: UIViewController {
         if (firstButtonFlag && secondButtonFlag && thirdButtonFlag)
         {
             print("yeay, we can go on")
+            self.performSegue(withIdentifier: "seguePromiseToCommandExplanation", sender: self)
         }
         else{
             print("first flag: \(firstButtonFlag)")

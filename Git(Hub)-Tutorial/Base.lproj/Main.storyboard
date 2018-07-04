@@ -238,9 +238,8 @@
                                     <action selector="firstButtonClicked:" destination="5rG-VQ-Pi0" eventType="touchUpInside" id="MaN-rM-44s"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="&quot;Bevor wir uns auf den Weg in das Git-Erlernen-Abenteuer machen, muss ich noch ein paar Sachen sicher stellen.&quot;" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JvO-Cm-qzN">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" text="&quot;Bevor wir uns auf den Weg in das Git-Erlernen-Abenteuer machen, muss ich noch ein paar Sachen sicher stellen.&quot;" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JvO-Cm-qzN">
                                 <rect key="frame" x="16" y="83" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -280,13 +279,18 @@
                                 <state key="normal" title="Aye, aye Kapitän!"/>
                                 <connections>
                                     <action selector="nextPage:" destination="5rG-VQ-Pi0" eventType="touchUpInside" id="2KF-Vm-B5N"/>
-                                    <segue destination="GdX-cM-pYU" kind="show" identifier="seguePromiseToCommandExplanation" id="DFK-lI-ODj"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="of4-uq-EK9" firstAttribute="top" secondItem="JvO-Cm-qzN" secondAttribute="bottom" constant="39" id="vIb-NU-dzf"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="UbD-fc-KQF"/>
                     </view>
+                    <connections>
+                        <segue destination="GdX-cM-pYU" kind="show" identifier="seguePromiseToCommandExplanation" id="ctp-mQ-RBP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ODt-bx-ja8" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="zGx-ZW-Zkm" userLabel="Exit" sceneMemberID="exit"/>
