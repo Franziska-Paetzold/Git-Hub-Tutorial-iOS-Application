@@ -50,20 +50,21 @@ class CommandExplanationViewController: UIViewController {
         //enables autolayout for the button
         backButton.translatesAutoresizingMaskIntoConstraints = false
         
-       backButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        backButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
         backButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
         backButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 40).isActive = true
         backButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
         backButton.leftAnchor.constraintEqualToSystemSpacingAfter(mainView.leftAnchor, multiplier: 0.5).isActive = true//ToDo: doesnt work
         
-        //============adding logic ============
+        //============ adding logic ============
         
         //adds back to StartTutorial function to the back button
         backButton.addTarget(self, action: #selector(backButtonFunction(_: )), for: .touchUpInside)
     }
     
+    //============ functions to come and go back ============
     @IBAction func backButtonFunction(_ sender: UIButton){
-        self.performSegue(withIdentifier: "segueCommandExplanationToStartTutorial", sender: nil)
+        self.performSegue(withIdentifier: "segueCommandExplanationToPromise", sender: nil)
     }
     
     @IBAction func backToCommandExplanationController(segue: UIStoryboardSegue){
