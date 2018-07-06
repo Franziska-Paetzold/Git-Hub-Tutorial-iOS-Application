@@ -29,6 +29,7 @@ class CommandGameViewController: UIViewController {
         commandGameModel.scaleMode = .aspectFill //over the full screen
         
         //show scene
+        commandGameView.showsPhysics = true
         commandGameView.presentScene(commandGameModel)
         
     }

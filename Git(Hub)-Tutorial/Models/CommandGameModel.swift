@@ -9,13 +9,16 @@
 import UIKit
 import SpriteKit
 
-class CommandGameModel: SKScene {
+class CommandGameModel: SKScene, SKPhysicsContactDelegate {
     
+    //textures (for physicsbodies)
+    let shipTexture = SKTexture(imageNamed: "ship")
+    let cargoTexture = SKTexture(imageNamed: "cargo")
+    
+    //nodes
     let backgroundNode = SKSpriteNode(imageNamed: "background")
     let foregroundNode = SKSpriteNode()
     
-    let shipNode = SKSpriteNode(imageNamed: "ship")
-    let cargoNode = SKSpriteNode(imageNamed: "cargo")
     var shippingItems: [SKNode] = []
     
     let collisionCategoryCargo: UInt32 = 0x1 << 1
@@ -31,10 +34,10 @@ class CommandGameModel: SKScene {
     
     override init(size: CGSize){
         super.init(size: size)
-        // needed for extension
-        physicsWorld.contactDelegate = self
+        self.physicsWorld.contactDelegate = self
+        //physicsWorld.contactDelegate = self
         
-        //ability for user to apply an impulse
+        //ability for user to apply an impulse to the nodes
         isUserInteractionEnabled = true
         
         
@@ -49,30 +52,42 @@ class CommandGameModel: SKScene {
         //============add foreground==============
         addChild(foregroundNode)
         
-        //============configuration cargo============
-        cargoNode.physicsBody = SKPhysicsBody (rectangleOf: CGSize(width: cargoNode.size.width, height: cargoNode.size.height))
+        //============initialization and configuration cargo============
+        let cargoNode = SKSpriteNode(imageNamed: "cargo")
         cargoNode.name = "CARGO"
-        cargoNode.physicsBody?.isDynamic = false //false, because the package shouldnt fall out of the screen
+        cargoNode.physicsBody = SKPhysicsBody(texture: cargoTexture, size: CGSize(width: cargoNode.size.width, height: cargoNode.size.height))
+        cargoNode.physicsBody?.isDynamic = true //false, because the package shouldnt fall out of the screen
+        cargoNode.physicsBody?.affectedByGravity = false
         cargoNode.position = CGPoint(x: size.width/2.0, y: size.height/10*9) // anchorPoint is the middle
         //stop rotation by collision
         cargoNode.physicsBody?.allowsRotation = false
         
         cargoNode.physicsBody?.categoryBitMask = collisionCategoryCargo
         cargoNode.physicsBody?.contactTestBitMask = collisionCategoryShip
-        cargoNode.physicsBody?.collisionBitMask = 0 //handling collision on our own
+        cargoNode.physicsBody?.collisionBitMask = 0 //handling collision on my own
         foregroundNode.addChild(cargoNode)
         shippingItems.append(cargoNode)
         
-        //============configuration ship============
+        //============ initialization and configuration ship============
+        let shipNode = SKSpriteNode(texture: shipTexture)
         shipNode.name = "SHIP"
-        shipNode.anchorPoint = CGPoint(x:1.0, y: 0.0) //anchor ist on the bottom right of the picture
+        /*
+        //anchor ist on the bottom right of the picture
+        shipNode.anchorPoint = CGPoint(x:1.0, y: 0.0)
         shipNode.position = CGPoint(x: (size.width/10)*9.9, y: (size.height/10)*0.1)
         print("full width: \(size.width)")
         print("curr width: \((size.width/10)*9.9)")
         print("full height: \(size.height)")
         print("curr height: \((size.height/10)*0.1)")
-        shipNode.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: shipNode.size.width, height: shipNode.size.height))
-        shipNode.physicsBody?.isDynamic = false //no gravity
+         */
+        
+        shipNode.position = CGPoint(x: (size.width/3)*2, y: (size.height/3)*1)
+        
+        shipNode.physicsBody = SKPhysicsBody(texture: shipTexture, size: CGSize(width: shipNode.size.width, height: shipNode.size.height))
+        
+        shipNode.physicsBody?.isDynamic = true //no gravity
+        shipNode.physicsBody?.affectedByGravity = false
+        
             
         shipNode.physicsBody?.categoryBitMask = collisionCategoryShip
         shipNode.physicsBody?.collisionBitMask = 0
@@ -82,10 +97,6 @@ class CommandGameModel: SKScene {
     
     
     //needs isUserInteractionEnabled = true in initializer
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-       
-    }
-    
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
             let touchPosition = touch.location(in: self)
@@ -99,22 +110,28 @@ class CommandGameModel: SKScene {
         }
     }
     
-}
-
-//remove package node if it contacts the ship
-extension CommandGameModel: SKPhysicsContactDelegate{
     func didBegin(_ contact: SKPhysicsContact) {
-        print("contact")
-        
-        //a represents first body in the contact (cargo), b property represents second body
-        let contactNode = contact.bodyA.node!
+        print ("contact begin")
+        //a: represents first body in the contact (cargo) alias the selected node, b: property represents second body
+        let selectedNode = contact.bodyA.node!
+        let contactNode = contact.bodyB.node!
         
         if contactNode.name == "SHIP" {
-            contactNode.removeFromParent()
+            selectedNode.removeFromParent()
+            print("removed cargo")
+            
             //TODO: add message on screen "Super, Schiff ist voll beladen!"
             //ToDO: Trigger for segue to the next screen
-        }
     }
+    //remove package node if it contacts the ship
+    func didEnd(_ contact: SKPhysicsContact) {
+        print("contact end")
+        
+        
+        }
+}
+
+
 }
 
 
