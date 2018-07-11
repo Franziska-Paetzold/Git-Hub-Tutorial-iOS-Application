@@ -13,6 +13,11 @@ class CommandExplanationViewController: UIViewController {
     var mainView: UIView!
     var backButton: UIButton!
     var nextViewButton: UIButton!
+    /*
+    var textView1: UITextView!
+    var textView2: UITextView!
+    var textView3: UITextView!
+ */
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +47,14 @@ class CommandExplanationViewController: UIViewController {
         nextViewButton.setTitleColor(.black, for: .normal)
         mainView.addSubview(nextViewButton)
         
+        /*
+        //textView1
+        textView1 = UITextView()
+        textView1.text = "\"Es ist offensichtlich, dass wir für unsere Reise noch ein Schiff benötigen. Du siehst mir aus als könntst du ohne Probleme slebst eins bauen!\""
+        textView1.backgroundColor = .white
+        textView1.textColor = .black
+        mainView.addSubview(textView1)
+        */
         //============adding constraints ============
         
         //##### main view #####
@@ -74,6 +87,14 @@ class CommandExplanationViewController: UIViewController {
         nextViewButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 80).isActive = true
         nextViewButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
         
+        /*
+        //####### text view 1 ######
+        textView1.translatesAutoresizingMaskIntoConstraints = false
+        textView1.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        textView1.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        textView1.topAnchor.constraint(equalTo: view.topAnchor, constant: 40).isActive = true
+        nextViewButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 80).isActive = true
+        */
         //============ adding logic ============
         
         //adds back to StartTutorial function to the back button

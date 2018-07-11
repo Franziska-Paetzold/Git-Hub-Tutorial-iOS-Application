@@ -11,13 +11,15 @@ import SpriteKit
 
 class CommandGameModel: SKScene, SKPhysicsContactDelegate {
     
+    var levelDoneFlag = false
+    
     //textures (for physicsbodies)
-    let shipTexture = SKTexture(imageNamed: "ship")
     let cargoTexture = SKTexture(imageNamed: "cargo")
     
     //nodes
     let backgroundNode = SKSpriteNode(imageNamed: "background")
     let foregroundNode = SKSpriteNode()
+//ship from shipModel
     
     var shippingItems: [SKNode] = []
     
@@ -69,28 +71,7 @@ class CommandGameModel: SKScene, SKPhysicsContactDelegate {
         shippingItems.append(cargoNode)
         
         //============ initialization and configuration ship============
-        let shipNode = SKSpriteNode(texture: shipTexture)
-        shipNode.name = "SHIP"
-        /*
-        //anchor ist on the bottom right of the picture
-        shipNode.anchorPoint = CGPoint(x:1.0, y: 0.0)
-        shipNode.position = CGPoint(x: (size.width/10)*9.9, y: (size.height/10)*0.1)
-        print("full width: \(size.width)")
-        print("curr width: \((size.width/10)*9.9)")
-        print("full height: \(size.height)")
-        print("curr height: \((size.height/10)*0.1)")
-         */
         
-        shipNode.position = CGPoint(x: (size.width/3)*2, y: (size.height/3)*1)
-        
-        shipNode.physicsBody = SKPhysicsBody(texture: shipTexture, size: CGSize(width: shipNode.size.width, height: shipNode.size.height))
-        
-        shipNode.physicsBody?.isDynamic = true //no gravity
-        shipNode.physicsBody?.affectedByGravity = false
-        
-            
-        shipNode.physicsBody?.categoryBitMask = collisionCategoryShip
-        shipNode.physicsBody?.collisionBitMask = 0
         
         foregroundNode.addChild(shipNode)
     }
@@ -119,18 +100,27 @@ class CommandGameModel: SKScene, SKPhysicsContactDelegate {
         if contactNode.name == "SHIP" {
             selectedNode.removeFromParent()
             print("removed cargo")
-            
-            //TODO: add message on screen "Super, Schiff ist voll beladen!"
-            //ToDO: Trigger for segue to the next screen
+            if let itemIndex = shippingItems.index(of: selectedNode){
+                shippingItems.remove(at: itemIndex)
+            }
+        }
+        
+        if shippingItems.isEmpty{
+            print("ship is fully loaded")
+            levelDoneFlag = true
+        }
+        
+        
+        //TODO: add message on screen "Super, Schiff ist voll beladen!"
+        //ToDO: Trigger for segue to the next screen
     }
+    
     //remove package node if it contacts the ship
     func didEnd(_ contact: SKPhysicsContact) {
         print("contact end")
         
         
         }
-}
-
 
 }
 

@@ -14,6 +14,8 @@
 		3839A32620EB773400769A8C /* CommandGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3839A32520EB773400769A8C /* CommandGameModel.swift */; };
 		38835D4720E0FE1D00164A04 /* CommandGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38835D4620E0FE1D00164A04 /* CommandGameViewController.swift */; };
 		38835D4920E0FE4D00164A04 /* CommandExplanationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38835D4820E0FE4D00164A04 /* CommandExplanationViewController.swift */; };
+		3896EEDD20F62079000EF7FA /* ShipModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3896EEDC20F62079000EF7FA /* ShipModel.swift */; };
+		3896EEDF20F6211A000EF7FA /* CargoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3896EEDE20F6211A000EF7FA /* CargoModel.swift */; };
 		38AA7A0820E38867008E7CAA /* PromiseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AA7A0720E38867008E7CAA /* PromiseViewController.swift */; };
 		38DD8ACE20DAA3D4000E4E34 /* GitExplanationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DD8ACB20DAA3D4000E4E34 /* GitExplanationViewController.swift */; };
 		38DD8ACF20DAA3D4000E4E34 /* StartTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DD8ACC20DAA3D4000E4E34 /* StartTutorialViewController.swift */; };
@@ -30,6 +32,8 @@
 		3839A32520EB773400769A8C /* CommandGameModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandGameModel.swift; sourceTree = "<group>"; };
 		38835D4620E0FE1D00164A04 /* CommandGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandGameViewController.swift; sourceTree = "<group>"; };
 		38835D4820E0FE4D00164A04 /* CommandExplanationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandExplanationViewController.swift; sourceTree = "<group>"; };
+		3896EEDC20F62079000EF7FA /* ShipModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipModel.swift; sourceTree = "<group>"; };
+		3896EEDE20F6211A000EF7FA /* CargoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CargoModel.swift; sourceTree = "<group>"; };
 		38AA7A0720E38867008E7CAA /* PromiseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromiseViewController.swift; sourceTree = "<group>"; };
 		38DD8ACB20DAA3D4000E4E34 /* GitExplanationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitExplanationViewController.swift; sourceTree = "<group>"; };
 		38DD8ACC20DAA3D4000E4E34 /* StartTutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartTutorialViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +84,7 @@
 		3839A32420EB771800769A8C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3896EEDB20F6200A000EF7FA /* addLevel */,
 				3839A32520EB773400769A8C /* CommandGameModel.swift */,
 			);
 			path = Models;
@@ -96,6 +101,15 @@
 				38835D4820E0FE4D00164A04 /* CommandExplanationViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		3896EEDB20F6200A000EF7FA /* addLevel */ = {
+			isa = PBXGroup;
+			children = (
+				3896EEDC20F62079000EF7FA /* ShipModel.swift */,
+				3896EEDE20F6211A000EF7FA /* CargoModel.swift */,
+			);
+			path = addLevel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,6 +189,8 @@
 				3839A32620EB773400769A8C /* CommandGameModel.swift in Sources */,
 				38AA7A0820E38867008E7CAA /* PromiseViewController.swift in Sources */,
 				38DD8ACF20DAA3D4000E4E34 /* StartTutorialViewController.swift in Sources */,
+				3896EEDF20F6211A000EF7FA /* CargoModel.swift in Sources */,
+				3896EEDD20F62079000EF7FA /* ShipModel.swift in Sources */,
 				38DD8AD020DAA3D4000E4E34 /* ViewController.swift in Sources */,
 				38DD8ACE20DAA3D4000E4E34 /* GitExplanationViewController.swift in Sources */,
 			);
