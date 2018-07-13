@@ -13,8 +13,20 @@ class ShipModel: SKSpriteNode {
     
     //textures (for physicsbodies)
     let shipTexture = SKTexture(imageNamed: "ship")
+    override var name: "SHIP"
     
-     self = SKSpriteNode(texture: shipTexture)
+    overr
+    /*
+    
+    convenience init(){
+        super.init(texture: shipTexture)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // self = SKSpriteNode(texture: shipTexture)
     shipNode.name = "SHIP"
     /*
      //anchor ist on the bottom right of the picture
@@ -36,5 +48,5 @@ class ShipModel: SKSpriteNode {
     
     shipNode.physicsBody?.categoryBitMask = collisionCategoryShip
     shipNode.physicsBody?.collisionBitMask = 0
-
+ */
 }

@@ -20,6 +20,7 @@ class CommandGameModel: SKScene, SKPhysicsContactDelegate {
     let backgroundNode = SKSpriteNode(imageNamed: "background")
     let foregroundNode = SKSpriteNode()
 //ship from shipModel
+    let ship = ShipModel(
     
     var shippingItems: [SKNode] = []
     
