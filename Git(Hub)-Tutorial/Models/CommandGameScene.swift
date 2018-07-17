@@ -1,5 +1,5 @@
 //
-//  CommandGameModel.swift
+//  CommandGameScene.swift
 //  Git(Hub)-Tutorial
 //
 //  Created by Franziska Pätzold on 25.06.18.
@@ -9,24 +9,24 @@
 import UIKit
 import SpriteKit
 
-class CommandGameModel: SKScene, SKPhysicsContactDelegate {
+class CommandGameScene: SKScene, SKPhysicsContactDelegate {
     
+    weak var myDelegate: CommandGameViewController?
+    
+   
     var levelDoneFlag = false
     
     //textures (for physicsbodies)
     let cargoTexture = SKTexture(imageNamed: "cargo")
     
-    //nodes
+    //parent nodes for the other nodes of the skviw
     let backgroundNode = SKSpriteNode(imageNamed: "background")
     let foregroundNode = SKSpriteNode()
-//ship from shipModel
-    let ship = ShipModel(
-    
+
+    //collects the cargoNodes
     var shippingItems: [SKNode] = []
     
-    let collisionCategoryCargo: UInt32 = 0x1 << 1
-    let collisionCategoryShip: UInt32 = 0x1 << 2
-    
+    //selected node by users touch
     var touchedNode = SKSpriteNode()
     
     
@@ -55,32 +55,26 @@ class CommandGameModel: SKScene, SKPhysicsContactDelegate {
         //============add foreground==============
         addChild(foregroundNode)
         
-        //============initialization and configuration cargo============
-        let cargoNode = SKSpriteNode(imageNamed: "cargo")
-        cargoNode.name = "CARGO"
-        cargoNode.physicsBody = SKPhysicsBody(texture: cargoTexture, size: CGSize(width: cargoNode.size.width, height: cargoNode.size.height))
-        cargoNode.physicsBody?.isDynamic = true //false, because the package shouldnt fall out of the screen
-        cargoNode.physicsBody?.affectedByGravity = false
-        cargoNode.position = CGPoint(x: size.width/2.0, y: size.height/10*9) // anchorPoint is the middle
-        //stop rotation by collision
-        cargoNode.physicsBody?.allowsRotation = false
+        //============ initialization and configuration ship============
+        //ship from shipModel
+        let shipNode = ShipModel()
+        foregroundNode.addChild(shipNode)
         
-        cargoNode.physicsBody?.categoryBitMask = collisionCategoryCargo
-        cargoNode.physicsBody?.contactTestBitMask = collisionCategoryShip
-        cargoNode.physicsBody?.collisionBitMask = 0 //handling collision on my own
+        //============initialization and configuration cargo============
+        let cargoNode = CargoModel(contactTestBitMask: shipNode.collisionCategory)
         foregroundNode.addChild(cargoNode)
         shippingItems.append(cargoNode)
         
-        //============ initialization and configuration ship============
         
         
-        foregroundNode.addChild(shipNode)
     }
     
     
     //needs isUserInteractionEnabled = true in initializer
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
+            
+            myDelegate?.didFinishTask(sender: self)
             let touchPosition = touch.location(in: self)
             let touchedNode = self.atPoint(touchPosition)
         
@@ -109,6 +103,7 @@ class CommandGameModel: SKScene, SKPhysicsContactDelegate {
         if shippingItems.isEmpty{
             print("ship is fully loaded")
             levelDoneFlag = true
+            myDelegate?.didFinishTask(sender: self)
         }
         
         
@@ -120,11 +115,14 @@ class CommandGameModel: SKScene, SKPhysicsContactDelegate {
     func didEnd(_ contact: SKPhysicsContact) {
         print("contact end")
         
-        
         }
 
 }
 
+protocol SceneDelegate: AnyObject {
+    func didFinishTask(sender: SKScene)
+    
+}
 
 
 

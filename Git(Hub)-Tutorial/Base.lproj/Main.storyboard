@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CMT-kA-nPL">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -234,7 +234,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c5u-NG-a5n" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="OWa-13-19g" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1146" y="1047"/>
+            <point key="canvasLocation" x="1017" y="1312"/>
         </scene>
         <!--promisView-->
         <scene sceneID="nuw-YK-FLi">
@@ -245,10 +245,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="85u-wD-Xrc" userLabel="Header">
-                                <rect key="frame" x="0.0" y="20" width="375" height="33.5"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6lZ-bq-S0L">
-                                        <rect key="frame" x="0.0" y="0.0" width="75" height="33.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="75" height="30"/>
                                         <color key="backgroundColor" red="1" green="0.65627189730000002" blue="0.63797433039999996" alpha="1" colorSpace="deviceRGB"/>
                                         <state key="normal" title="zurück">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -268,28 +268,28 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rd9-EV-bx6" userLabel="BodyBottom">
-                                <rect key="frame" x="0.0" y="244" width="375" height="276.5"/>
+                                <rect key="frame" x="0.0" y="221.5" width="375" height="243"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O0r-qN-ddJ">
-                                        <rect key="frame" x="43.5" y="33" width="288" height="211.5"/>
+                                        <rect key="frame" x="43.5" y="29" width="288" height="186.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1iM-41-0an" userLabel="Content for Checkboxes">
-                                                <rect key="frame" x="57.5" y="0.0" width="230.5" height="211.5"/>
+                                                <rect key="frame" x="57.5" y="0.0" width="230.5" height="186.5"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Ich möchte den Kapitän unterstützen." textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LyB-xl-e5r">
-                                                        <rect key="frame" x="11.5" y="0.0" width="219" height="66.5"/>
+                                                        <rect key="frame" x="11.5" y="0.0" width="219" height="59"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Ja, ich möchte Git erlernen und werde deswegen keine Seite überspringen." textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EvT-V3-iyS">
-                                                        <rect key="frame" x="11.5" y="145" width="219" height="66.5"/>
+                                                        <rect key="frame" x="11.5" y="127.5" width="219" height="59"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Ich verspreche mir alle Notationen der Erzählerin aufmerksam durchzulesen." textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bl3-5E-Bb9">
-                                                        <rect key="frame" x="11.5" y="72" width="219" height="66.5"/>
+                                                        <rect key="frame" x="11.5" y="63.5" width="219" height="58.5"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -311,10 +311,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FqA-7A-alg" userLabel="View for CheckboxTop">
-                                                <rect key="frame" x="0.0" y="0.0" width="57.5" height="66.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="57.5" height="59"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YZn-ZB-FSs" userLabel="CheckboxTop">
-                                                        <rect key="frame" x="8.5" y="13" width="40" height="40"/>
+                                                        <rect key="frame" x="8.5" y="9.5" width="40" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="6SX-vh-nDx"/>
                                                             <constraint firstAttribute="width" constant="40" id="aLK-DG-mcp"/>
@@ -332,10 +332,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="itf-4E-nrv" userLabel="View for CheckboxMiddle">
-                                                <rect key="frame" x="-0.5" y="66.5" width="57.5" height="67"/>
+                                                <rect key="frame" x="-0.5" y="59" width="57.5" height="59.5"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T9f-wa-aG4" userLabel="CheckboxMiddle">
-                                                        <rect key="frame" x="8.5" y="13" width="40" height="40"/>
+                                                        <rect key="frame" x="8.5" y="9" width="40" height="40"/>
                                                         <state key="normal" image="unclicked"/>
                                                         <state key="selected" image="clicked"/>
                                                         <connections>
@@ -349,10 +349,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G2h-1H-wzF" userLabel="View for CheckboxBottom">
-                                                <rect key="frame" x="0.0" y="133.5" width="57.5" height="66.5"/>
+                                                <rect key="frame" x="0.0" y="118.5" width="57.5" height="59"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="of4-uq-EK9" userLabel="CheckboxBottom">
-                                                        <rect key="frame" x="8.5" y="13.5" width="40" height="40"/>
+                                                        <rect key="frame" x="8.5" y="9.5" width="40" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="7rV-eS-Rff"/>
                                                             <constraint firstAttribute="width" constant="40" id="a9d-x7-oVr"/>
@@ -402,7 +402,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xJV-yl-aXh" userLabel="Footer">
-                                <rect key="frame" x="0.0" y="520.5" width="375" height="102.5"/>
+                                <rect key="frame" x="0.0" y="464.5" width="375" height="92.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MWI-oU-rij">
                                         <rect key="frame" x="108" y="35.5" width="159" height="30"/>
@@ -425,10 +425,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ewM-0H-dD0" userLabel="BodyTop">
-                                <rect key="frame" x="0.0" y="53.5" width="375" height="190.5"/>
+                                <rect key="frame" x="0.0" y="50" width="375" height="171.5"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JvO-Cm-qzN">
-                                        <rect key="frame" x="43.5" y="21" width="288.5" height="147"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JvO-Cm-qzN">
+                                        <rect key="frame" x="44" y="19" width="289" height="71"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <attributedString key="attributedText">
                                             <fragment content="&quot;Bevor wir uns auf den Weg in das Git-Erlernen-Abenteuer machen, muss ich noch ein paar Sachen sicher stellen.&quot;">
@@ -633,7 +633,7 @@
                                                         <rect key="frame" x="30" y="596" width="320" height="351"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <mutableString key="text">Mit Git kannst du jeden beliebigen Dateityp oder jedes beliebige Projekt versionieren. Du kannst mit Git also genauso gut den Projektordner für deine Bachelorarbeit als auch für Programmierprojekte verwenden. Dabei wird dir ermöglicht zu jeder Zeit zu einer älteren Version deines Projekts zurück kehren zu können. Des Weiteren hast du die Möglichkeit über ein Netzwerk mit anderen Menschen an deinem Projekt zusammen zu arbeiten. Über Git kannst du dir anzeigen lassen was, wann von wem geändert wurde und ob du diese Änderungen für die Weiterarbeit an deinem Projekt verwenden möchtest.</mutableString>
+                                                        <string key="text">Mit Git kannst du jeden beliebigen Dateityp oder jedes beliebige Projekt versionieren. Du kannst mit Git also genauso gut den Projektordner für deine Bachelorarbeit als auch für Programmierprojekte verwenden. Dabei wird dir ermöglicht zu jeder Zeit zu einer älteren Version deines Projekts zurück kehren zu können. Des Weiteren hast du die Möglichkeit über ein Netzwerk mit anderen Menschen an deinem Projekt zusammen zu arbeiten. Über Git kannst du dir anzeigen lassen was, wann von wem geändert wurde und ob du diese Änderungen für die Weiterarbeit an deinem Projekt verwenden möchtest.</string>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>

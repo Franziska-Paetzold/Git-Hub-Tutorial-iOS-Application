@@ -11,42 +11,33 @@ import SpriteKit
 
 class ShipModel: SKSpriteNode {
     
-    //textures (for physicsbodies)
-    let shipTexture = SKTexture(imageNamed: "ship")
-    override var name: "SHIP"
+    let collisionCategory: UInt32 = 0x1 << 2
     
-    overr
-    /*
+    override init(texture: SKTexture?, color: UIColor, size: CGSize) {
+        super.init(texture: texture, color: color, size: size)
+    }
     
-    convenience init(){
-        super.init(texture: shipTexture)
+    convenience init() {
+        self.init(texture: SKTexture(imageNamed: "ship"), color: .black, size: CGSize(width: 100, height: 100))
+        self.name = "SHIP"
+        self.anchorPoint = CGPoint(x:1.0, y: 0.0)
+        //ToDo größe nicht mehr abhängig von view
+        self.position = CGPoint(x: (size.width/3)*2, y: (size.height/3)*1)
+       if let shipTexture = self.texture{
+        
+        self.physicsBody = SKPhysicsBody(texture: shipTexture, size: CGSize(width: self.size.width, height: self.size.height))
+        
+        self.physicsBody?.isDynamic = true //no gravity
+        self.physicsBody?.affectedByGravity = false
+        
+        self.physicsBody?.categoryBitMask = collisionCategory
+        self.physicsBody?.collisionBitMask = 0
+           
+        }
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
     }
-    
-    // self = SKSpriteNode(texture: shipTexture)
-    shipNode.name = "SHIP"
-    /*
-     //anchor ist on the bottom right of the picture
-     shipNode.anchorPoint = CGPoint(x:1.0, y: 0.0)
-     shipNode.position = CGPoint(x: (size.width/10)*9.9, y: (size.height/10)*0.1)
-     print("full width: \(size.width)")
-     print("curr width: \((size.width/10)*9.9)")
-     print("full height: \(size.height)")
-     print("curr height: \((size.height/10)*0.1)")
-     */
-    
-    shipNode.position = CGPoint(x: (size.width/3)*2, y: (size.height/3)*1)
-    
-    shipNode.physicsBody = SKPhysicsBody(texture: shipTexture, size: CGSize(width: shipNode.size.width, height: shipNode.size.height))
-    
-    shipNode.physicsBody?.isDynamic = true //no gravity
-    shipNode.physicsBody?.affectedByGravity = false
-    
-    
-    shipNode.physicsBody?.categoryBitMask = collisionCategoryShip
-    shipNode.physicsBody?.collisionBitMask = 0
- */
 }

@@ -11,7 +11,7 @@ import SpriteKit
 
 class CommandGameViewController: UIViewController {
     
-    var commandGameModel: CommandGameModel!
+    var commandGameScene: CommandGameScene!
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -25,20 +25,28 @@ class CommandGameViewController: UIViewController {
         commandGameView.showsFPS = false
         
         //game "scene"
-        commandGameModel = CommandGameModel(size: commandGameView.bounds.size)
-        commandGameModel.scaleMode = .aspectFill //over the full screen
+        commandGameScene = CommandGameScene(size: commandGameView.bounds.size)
+        commandGameScene.scaleMode = .aspectFill //over the full screen
+        
+        commandGameScene.myDelegate = self
         
         //show scene
         commandGameView.showsPhysics = true
-        commandGameView.presentScene(commandGameModel)
+        commandGameView.presentScene(commandGameScene)
         
     }
     
     func nextView(){
-        if commandGameModel.levelDoneFlag {
+        if commandGameScene.levelDoneFlag {
             print("rechead view changing point")
             self.performSegue(withIdentifier: "segueCommandGameToCommandFeedback", sender: nil)
         }
     }
-   
+    
+}
+
+extension CommandGameViewController: SceneDelegate{
+    func didFinishTask(sender: SKScene) {
+        print("delegate")
+    }
 }
