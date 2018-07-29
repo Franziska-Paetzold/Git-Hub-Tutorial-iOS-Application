@@ -10,6 +10,7 @@ Tutorial to learn the essentials of Git and GitHub on an iPhone
 - use buttons as checkboxes
 - create a view programmatically [CommandExplanationController]
 - fit physicsbodies to pngs content (ignore transparency) [CommandGameController]
+- auto layout
 
 sources for placeholder/ sample pictures in CommandGame(MVC):
 25.06.2018
