@@ -57,11 +57,11 @@ class CommandGameScene: SKScene, SKPhysicsContactDelegate {
         
         //============ initialization and configuration ship============
         //ship from shipModel
-        let shipNode = ShipModel()
+        let shipNode = ShipNode(viewWidth: size.width, viewHeight: size.height)
         foregroundNode.addChild(shipNode)
         
         //============initialization and configuration cargo============
-        let cargoNode = CargoModel(contactTestBitMask: shipNode.collisionCategory)
+        let cargoNode = CargoNode(contactTestBitMask: shipNode.collisionCategory)
         foregroundNode.addChild(cargoNode)
         shippingItems.append(cargoNode)
         
