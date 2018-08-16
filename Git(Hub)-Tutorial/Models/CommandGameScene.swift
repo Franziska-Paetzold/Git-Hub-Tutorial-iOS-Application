@@ -67,6 +67,7 @@ class CommandGameScene: SKScene, SKPhysicsContactDelegate {
         
         
         
+        
     }
     
     
