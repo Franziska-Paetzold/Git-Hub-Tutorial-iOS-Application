@@ -12,6 +12,7 @@
 		382E3F5320D9397C001761C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 382E3F5220D9397C001761C1 /* Assets.xcassets */; };
 		382E3F5620D9397C001761C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 382E3F5420D9397C001761C1 /* LaunchScreen.storyboard */; };
 		3839A32620EB773400769A8C /* CommandGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3839A32520EB773400769A8C /* CommandGameScene.swift */; };
+		3863E13D212CA067000CC659 /* GitExplanationShortController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863E13C212CA067000CC659 /* GitExplanationShortController.swift */; };
 		38835D4720E0FE1D00164A04 /* CommandGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38835D4620E0FE1D00164A04 /* CommandGameViewController.swift */; };
 		38835D4920E0FE4D00164A04 /* CommandExplanationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38835D4820E0FE4D00164A04 /* CommandExplanationViewController.swift */; };
 		3896EEDD20F62079000EF7FA /* ShipNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3896EEDC20F62079000EF7FA /* ShipNode.swift */; };
@@ -30,6 +31,7 @@
 		382E3F5520D9397C001761C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		382E3F5720D9397C001761C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3839A32520EB773400769A8C /* CommandGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandGameScene.swift; sourceTree = "<group>"; };
+		3863E13C212CA067000CC659 /* GitExplanationShortController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitExplanationShortController.swift; sourceTree = "<group>"; };
 		38835D4620E0FE1D00164A04 /* CommandGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandGameViewController.swift; sourceTree = "<group>"; };
 		38835D4820E0FE4D00164A04 /* CommandExplanationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandExplanationViewController.swift; sourceTree = "<group>"; };
 		3896EEDC20F62079000EF7FA /* ShipNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipNode.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				38DD8ACD20DAA3D4000E4E34 /* ViewController.swift */,
 				38835D4620E0FE1D00164A04 /* CommandGameViewController.swift */,
 				38835D4820E0FE4D00164A04 /* CommandExplanationViewController.swift */,
+				3863E13C212CA067000CC659 /* GitExplanationShortController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 				38835D4920E0FE4D00164A04 /* CommandExplanationViewController.swift in Sources */,
 				3839A32620EB773400769A8C /* CommandGameScene.swift in Sources */,
 				38AA7A0820E38867008E7CAA /* PromiseViewController.swift in Sources */,
+				3863E13D212CA067000CC659 /* GitExplanationShortController.swift in Sources */,
 				38DD8ACF20DAA3D4000E4E34 /* StartTutorialViewController.swift in Sources */,
 				3896EEDF20F6211A000EF7FA /* CargoNode.swift in Sources */,
 				3896EEDD20F62079000EF7FA /* ShipNode.swift in Sources */,

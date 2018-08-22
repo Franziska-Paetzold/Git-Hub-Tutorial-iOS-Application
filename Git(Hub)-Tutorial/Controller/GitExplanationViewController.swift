@@ -33,7 +33,7 @@ class GitExplanationViewController: UIViewController {
     }
     
     //needed because the associated view is not the only one pointig the next view
-    //overwrites the sugueFromController variable from StartTutorialController class, to know which view was previous
+    //overwrites the segueFromController variable from StartTutorialController class, to know which view was previous
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? StartTutorialViewController{        destination.segueFromController = "GitExplanationViewController"
         }

@@ -104,7 +104,7 @@ class CommandExplanationViewController: UIViewController {
     
     //============ functions to come and go back ============
     @IBAction func backToPrevoiusView(_ sender: UIButton){
-        self.performSegue(withIdentifier: "segueCommandExplanationToPromise", sender: nil)
+        self.performSegue(withIdentifier: "segueCommandExplanationToGitExplanationShort", sender: nil)
     }
     
     @IBAction func goToNextView(_ sender: UIButton){
