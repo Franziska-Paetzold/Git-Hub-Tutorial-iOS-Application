@@ -47,6 +47,8 @@ class CommandGameViewController: UIViewController {
 
 extension CommandGameViewController: SceneDelegate{
     func didFinishTask(sender: SKScene) {
-        print("delegate")
+        print("mini game done")
+        self.performSegue(withIdentifier: "segueCommandGametoCommandFeedback", sender: nil)
     }
 }
+
