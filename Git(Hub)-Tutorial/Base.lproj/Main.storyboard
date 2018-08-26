@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="n9S-Hj-8tr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GdX-cM-pYU">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -816,7 +816,7 @@
         <!--GitExplanationShort-->
         <scene sceneID="cxs-gA-KQU">
             <objects>
-                <viewController title="GitExplanationShort" id="SK9-9m-jud" sceneMemberID="viewController">
+                <viewController title="GitExplanationShort" id="SK9-9m-jud" customClass="GitExplanationShortController" customModule="Git_Hub__Tutorial" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xPO-OS-ecg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -935,11 +935,11 @@
         <!--CommandExplanationView-->
         <scene sceneID="GHZ-VP-aWX">
             <objects>
-                <viewController title="CommandExplanationView" id="GdX-cM-pYU" customClass="CommandExplanationViewController" customModule="Git_Hub__Tutorial" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="CommandExplanationView" modalPresentationStyle="overCurrentContext" id="GdX-cM-pYU" customClass="CommandExplanationViewController" customModule="Git_Hub__Tutorial" customModuleProvider="target" sceneMemberID="viewController">
                     <connections>
                         <segue destination="CMT-kA-nPL" kind="show" identifier="segueCommandExplanationToCommandGame" id="HqU-b7-vpc"/>
-                        <segue destination="K3Y-4e-cIx" kind="unwind" identifier="segueCommandExplanationToGitExplanationShort" unwindAction="backToGitExplanationShortControllerWithSegue:" id="yK2-ui-XlF"/>
                         <segue destination="K3Y-4e-cIx" kind="unwind" identifier="segueCommandExplanationToCommandFeedback" unwindAction="backToCommandFeedbackControllerWithSegue:" id="Dr4-cM-joz"/>
+                        <segue destination="K3Y-4e-cIx" kind="unwind" identifier="segueCommandExplanationToGitExplanationShort" unwindAction="backToGitExplanationShortControllerWithSegue:" id="ySD-e4-WDD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fYH-aF-ddT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -972,12 +972,68 @@
                     <connections>
                         <segue destination="7jX-HX-ft6" kind="unwind" unwindAction="backToCommandFeedbackControllerWithSegue:" id="Sh1-dZ-qpI"/>
                         <segue destination="GdX-cM-pYU" kind="show" identifier="segueCommandFeedbackToCommandExplanation" id="E5m-J7-U6p"/>
+                        <segue destination="jph-1k-ZaA" kind="show" identifier="segueCommandFeedbackToPopUp" id="Q7T-dy-GMx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bik-bP-eRM" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="7jX-HX-ft6" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="5833" y="1155"/>
+        </scene>
+        <!--Pop Up View Controller-->
+        <scene sceneID="9Rh-Gw-v8h">
+            <objects>
+                <viewController modalPresentationStyle="overCurrentContext" id="jph-1k-ZaA" customClass="PopUpViewController" customModule="Git_Hub__Tutorial" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SOT-0h-Six">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eyi-XX-0hf">
+                                <rect key="frame" x="50" y="220" width="275" height="378"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Achtung Schiffbruch!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F7b-4a-V1m">
+                                        <rect key="frame" x="8" y="8" width="259" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3c-Es-mav">
+                                        <rect key="frame" x="8" y="37" width="259" height="202"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <string key="text">An dieser Stelle endet das Tutorial vorerst. Weitere Befehle kannst du in neueren Versionen der App lernen. Achte in Zukunft also auf Updates! Bis dahin ahoi und gutes Gelingen bei der Git-Nutung!</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GJv-wP-ApT">
+                                        <rect key="frame" x="77" y="247" width="120" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Zurück zum Start"/>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="MNa-00-pRf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="eyi-XX-0hf" firstAttribute="centerX" secondItem="hf6-6J-oe7" secondAttribute="centerX" id="3OW-Dc-bv8"/>
+                            <constraint firstItem="hf6-6J-oe7" firstAttribute="trailing" secondItem="eyi-XX-0hf" secondAttribute="trailing" constant="50" id="98t-HN-Zs7"/>
+                            <constraint firstItem="eyi-XX-0hf" firstAttribute="leading" secondItem="hf6-6J-oe7" secondAttribute="leading" constant="50" id="Bqs-Qn-jZd"/>
+                            <constraint firstItem="hf6-6J-oe7" firstAttribute="bottom" secondItem="eyi-XX-0hf" secondAttribute="bottom" constant="200" id="Ib0-tw-b7G"/>
+                            <constraint firstItem="eyi-XX-0hf" firstAttribute="centerY" secondItem="hf6-6J-oe7" secondAttribute="centerY" id="lRB-zS-EKf"/>
+                            <constraint firstItem="eyi-XX-0hf" firstAttribute="top" secondItem="hf6-6J-oe7" secondAttribute="top" constant="200" id="zzE-Hw-Ekr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hf6-6J-oe7"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rj4-vE-KEF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6634" y="-457"/>
         </scene>
     </scenes>
     <resources>
@@ -992,7 +1048,7 @@
         <image name="vcs_throwOut" width="1412" height="966"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fji-G8-UrZ"/>
+        <segue reference="E5m-J7-U6p"/>
         <segue reference="4wt-Os-Gx1"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -15,8 +15,9 @@ class GitExplanationShortController: UIViewController {
     }
     
     //overwrites the segueFromController variable from CommandExplanationViewController class, to know which view was previous
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? CommandExplanationViewController{        destination.segueFromController = "GitExplanationShortViewController"
+            CurrentCommand.commandNum = 0
         }
     }
 }

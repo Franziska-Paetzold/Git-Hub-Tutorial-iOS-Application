@@ -19,10 +19,6 @@ class GitExplanationViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-        
-        //textView1.allowsEditingTextAttributes = false
-        //textView1.isEditable = false
     }
     
 

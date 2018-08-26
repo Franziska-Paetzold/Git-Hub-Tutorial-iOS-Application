@@ -43,6 +43,11 @@ class CommandGameViewController: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? CommandFeedbackViewController{        destination.segueFromController = "CommandGameViewController"
+        }
+    }
+    
 }
 
 extension CommandGameViewController: SceneDelegate{

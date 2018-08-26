@@ -8,8 +8,15 @@
 
 import UIKit
 
+struct CurrentCommand{
+    static var commandNum: Int! = 0
+    //static let commandOrder = ["init", "add", "commit", "status", "help"]
+    static let commandOrder = ["init"]
+}
+
 class CommandExplanationViewController: UIViewController {
     
+    //variables passed by incoming segues
     var segueFromController: String!
     
     var mainView: UIView!
@@ -17,8 +24,17 @@ class CommandExplanationViewController: UIViewController {
     var nextViewButton: UIButton!
     var textView1: UITextView!
     
+    
+    let contentOfCommand =
+        ["init" : "init content",
+         "add" : "add content",
+         "commit" : "commit content",
+         "status" : "status content",
+         "help" : "help content"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("current command number: \(CurrentCommand.commandNum!)")
         
         //=============initializing view tools ============
         
@@ -47,7 +63,8 @@ class CommandExplanationViewController: UIViewController {
         
         //textView
         textView1 = UITextView()
-        textView1.text = "Content of CommandExplanationView"
+        //the counter CurrentCommand.commandNum chooses the name of the current command in the row of CurrentsCommand.commandOrder and so we can get from contentOfCommand the matching content for the command
+        textView1.text = contentOfCommand[CurrentCommand.commandOrder[CurrentCommand.commandNum]]
         textView1.backgroundColor = .white
         textView1.textColor = .black
         mainView.addSubview(textView1)
@@ -113,9 +130,17 @@ class CommandExplanationViewController: UIViewController {
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? CommandFeedbackViewController{        destination.segueFromController = "CommandExplanationViewController"
+        }
+    }
+    
     @IBAction func goToNextView(_ sender: UIButton){
         self.performSegue(withIdentifier: "segueCommandExplanationToCommandGame", sender: nil)
+        
     }
+    
+    
     
     @IBAction func backToCommandExplanationController(segue: UIStoryboardSegue){
         print("Unwind to CommandExplanation")
