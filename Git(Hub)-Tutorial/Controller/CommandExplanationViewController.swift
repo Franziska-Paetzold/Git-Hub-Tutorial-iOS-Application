@@ -9,7 +9,9 @@
 import UIKit
 
 class CommandExplanationViewController: UIViewController {
-
+    
+    var segueFromController: String!
+    
     var mainView: UIView!
     var backButton: UIButton!
     var nextViewButton: UIButton!
@@ -100,7 +102,15 @@ class CommandExplanationViewController: UIViewController {
     
     //============ functions to come and go back ============
     @IBAction func backToPrevoiusView(_ sender: UIButton){
-        self.performSegue(withIdentifier: "segueCommandExplanationToGitExplanationShort", sender: nil)
+        if segueFromController == "CommandFeedbackViewController"{
+            //segueIDs are set in the storyboard
+            //nil chooses the defalt for the sender
+            self.performSegue(withIdentifier: "segueCommandExplanationToCommandFeedback", sender: nil)
+        }
+        else if segueFromController == "GitExplanationShortViewController"{
+            self.performSegue(withIdentifier: "segueCommandExplanationToGitExplanationShort", sender: nil)
+        }
+        
     }
     
     @IBAction func goToNextView(_ sender: UIButton){

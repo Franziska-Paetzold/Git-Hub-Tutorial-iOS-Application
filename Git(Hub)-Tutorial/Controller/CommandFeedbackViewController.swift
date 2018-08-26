@@ -9,27 +9,85 @@
 import UIKit
 
 class CommandFeedbackViewController: UIViewController {
-
+    var mainView: UIView!
+    var nextViewButton: UIButton!
+    var textView1: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        //=============initializing view tools ============
+        
+        //main view
+        mainView = UIView()
+        mainView.backgroundColor = .white
+        self.view.addSubview(mainView)
+        
+        //next view button
+        nextViewButton = UIButton()
+        nextViewButton.setTitle("weiter", for: .normal)
+        nextViewButton.titleLabel?.textAlignment = .center
+        nextViewButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        nextViewButton.backgroundColor = .green
+        nextViewButton.setTitleColor(.black, for: .normal)
+        mainView.addSubview(nextViewButton)
+        
+        //textView
+        textView1 = UITextView()
+        textView1.text = "Content of CommandExplanationView"
+        textView1.backgroundColor = .white
+        textView1.textColor = .black
+        mainView.addSubview(textView1)
+        
+        
+        //============adding constraints ============
+        
+        //##### main view #####
+        mainView.translatesAutoresizingMaskIntoConstraints = false
+        mainView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        mainView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        mainView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1).isActive = true
+        mainView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 1).isActive = true
+        
+        //###### next view button #####
+        nextViewButton.translatesAutoresizingMaskIntoConstraints = false
+        nextViewButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        nextViewButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        nextViewButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 170).isActive = true
+        nextViewButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
+        
+        
+        //####### text view 1 ######
+        textView1.translatesAutoresizingMaskIntoConstraints = false
+        textView1.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        textView1.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        textView1.topAnchor.constraint(equalTo: view.topAnchor, constant: 80).isActive = true
+        textView1.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
+        
+        textView1.isScrollEnabled = false
+        textView1.isEditable = false
+        textView1.isSelectable = false
+        
+        //============ adding logic ============
+        
+        //adds back to StartTutorial function to the back button
+        nextViewButton.addTarget(self, action: #selector(goToNextView(_:)), for: .touchUpInside)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //============ functions to come and go back ============
+    
+    @IBAction func goToNextView(_ sender: UIButton){
+        self.performSegue(withIdentifier: "segueCommandFeedbackToCommandExplanation", sender: nil)
     }
-    */
+    
+    //overwrites the segueFromController variable from CommandExplanationViewController class, to know which view was previous
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? CommandExplanationViewController{        destination.segueFromController = "CommandFeedbackViewController"
+        }
+    }
+    
+    @IBAction func backToCommandFeedbackController(segue: UIStoryboardSegue){
+        print("Unwind to CommandFeedback")
+    }
 
 }
