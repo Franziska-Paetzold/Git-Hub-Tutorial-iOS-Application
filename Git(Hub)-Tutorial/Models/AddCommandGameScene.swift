@@ -1,5 +1,5 @@
 //
-//  CommandGameScene.swift
+//  AddCommandGameScene.swift
 //  Git(Hub)-Tutorial
 //
 //  Created by Franziska Pätzold on 25.06.18.
@@ -9,7 +9,7 @@
 import UIKit
 import SpriteKit
 
-class CommandGameScene: SKScene, SKPhysicsContactDelegate {
+class AddCommandGameScene: SKScene, SKPhysicsContactDelegate {
     
     weak var myDelegate: CommandGameViewController?
     

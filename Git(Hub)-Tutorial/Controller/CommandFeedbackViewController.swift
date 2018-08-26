@@ -46,8 +46,8 @@ class CommandFeedbackViewController: UIViewController {
         
         //textView
         textView1 = UITextView()
-        //the counter CurrentCommand.commandNum chooses the name of the current command in the row of CurrentsCommand.commandOrder and so we can get from contentOfCommand the matching content for the command
-        textView1.text = contentOfCommand[CurrentCommand.commandOrder[CurrentCommand.commandNum]]
+        //the counter CurrentCommand.num chooses the name of the current command in the row of CurrentsCommand.commandOrder and so we can get from contentOfCommand the matching content for the command
+        textView1.text = contentOfCommand[CurrentCommand.name]
         textView1.backgroundColor = .white
         textView1.textColor = .black
         mainView.addSubview(textView1)
@@ -92,12 +92,12 @@ class CommandFeedbackViewController: UIViewController {
     @IBAction func goToNextView(_ sender: UIButton){
         if let origin = segueFromController{
             if origin == "CommandExplanationViewController"{
-                //CurrentCommand.commandNum doesn't change if the user went just back from the CommandExplanationView
+                //CurrentCommand.num doesn't change if the user went just back from the CommandExplanationView
                 self.performSegue(withIdentifier: "segueCommandFeedbackToCommandExplanation", sender: nil)
             }
             else if origin == "CommandGameViewController"{
-                CurrentCommand.commandNum = CurrentCommand.commandNum+1
-                if CurrentCommand.commandNum == CurrentCommand.commandOrder.count{
+                CurrentCommand.num = CurrentCommand.num+1
+                if CurrentCommand.num == CurrentCommand.order.count{
                     //currently end of tutorial
                     self.performSegue(withIdentifier: "segueCommandFeedbackToPopUp", sender: nil)
                 }

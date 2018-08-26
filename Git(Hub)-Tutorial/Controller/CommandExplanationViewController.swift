@@ -9,9 +9,9 @@
 import UIKit
 
 struct CurrentCommand{
-    static var commandNum: Int! = 0
-    //static let commandOrder = ["init", "add", "commit", "status", "help"]
-    static let commandOrder = ["init"]
+    static var num: Int! = 0
+    static let order = ["init", "add", "commit", "status", "help"]
+    static var name = CurrentCommand.order[CurrentCommand.num]
 }
 
 class CommandExplanationViewController: UIViewController {
@@ -34,7 +34,7 @@ class CommandExplanationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("current command number: \(CurrentCommand.commandNum!)")
+        print("current command number: \(CurrentCommand.num!)")
         
         //=============initializing view tools ============
         
@@ -63,8 +63,8 @@ class CommandExplanationViewController: UIViewController {
         
         //textView
         textView1 = UITextView()
-        //the counter CurrentCommand.commandNum chooses the name of the current command in the row of CurrentsCommand.commandOrder and so we can get from contentOfCommand the matching content for the command
-        textView1.text = contentOfCommand[CurrentCommand.commandOrder[CurrentCommand.commandNum]]
+        //the counter CurrentCommand.num chooses the name of the current command in the row of CurrentsCommand.commandOrder and so we can get from contentOfCommand the matching content for the command
+        textView1.text = contentOfCommand[CurrentCommand.name]
         textView1.backgroundColor = .white
         textView1.textColor = .black
         mainView.addSubview(textView1)
