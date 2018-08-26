@@ -14,11 +14,6 @@ class CommandExplanationViewController: UIViewController {
     var backButton: UIButton!
     var nextViewButton: UIButton!
     var textView1: UITextView!
-    /*
-    var textView1: UITextView!
-    var textView2: UITextView!
-    var textView3: UITextView!
- */
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,14 +50,7 @@ class CommandExplanationViewController: UIViewController {
         textView1.textColor = .black
         mainView.addSubview(textView1)
         
-        /*
-        //textView1
-        textView1 = UITextView()
-        textView1.text = "\"Es ist offensichtlich, dass wir für unsere Reise noch ein Schiff benötigen. Du siehst mir aus als könntst du ohne Probleme slebst eins bauen!\""
-        textView1.backgroundColor = .white
-         textView1.textColor = .black
-         mainView.addSubview(textView1)
-        */
+       
         //============adding constraints ============
         
         //##### main view #####
@@ -73,12 +61,6 @@ class CommandExplanationViewController: UIViewController {
         mainView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 1).isActive = true
         
         
-        /*
-        mainView.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor)
-        mainView.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor)
-        mainView.topAnchor.constraintEqualToSystemSpacingBelow(view.safeAreaLayoutGuide.topAnchor, multiplier: 1.0)
-        view.safeAreaLayoutGuide.bottomAnchor.constraintEqualToSystemSpacingBelow(mainView.bottomAnchor, multiplier: 1.0)
-        */
         
         //##### back button #####
         //enables autolayout for the button
@@ -89,13 +71,6 @@ class CommandExplanationViewController: UIViewController {
         backButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 40).isActive = true
         backButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
         backButton.leftAnchor.constraintEqualToSystemSpacingAfter(mainView.leftAnchor, multiplier: 0.5).isActive = true//ToDo: doesnt work
-        
-        
-        //####### text view 1 ######
-       // textView1.translatesAutoresizingMaskIntoConstraints = false
-      //  textView1.topAnchor.constraint(equalTo: view.topAnchor, constant: 80).isActive = true
-     //
-        textView1.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
         
         //###### next view button #####
         nextViewButton.translatesAutoresizingMaskIntoConstraints = false
@@ -110,7 +85,7 @@ class CommandExplanationViewController: UIViewController {
         textView1.widthAnchor.constraint(equalToConstant: 200).isActive = true
         textView1.heightAnchor.constraint(equalToConstant: 80).isActive = true
         textView1.topAnchor.constraint(equalTo: view.topAnchor, constant: 80).isActive = true
-        nextViewButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 80).isActive = true
+        textView1.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
         
         textView1.isScrollEnabled = false
         textView1.isEditable = false
