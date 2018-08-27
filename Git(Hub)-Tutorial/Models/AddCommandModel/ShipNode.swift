@@ -24,6 +24,7 @@ class ShipNode: SKSpriteNode {
         self.anchorPoint = CGPoint(x:1.0, y: 0.0)
         //ToDo größe nicht mehr abhängig von view
         self.position = CGPoint(x: (viewWidth/3)*2, y: (viewHeight/3)*1)
+        
        if let _shipTexture = self.texture{
         
         self.physicsBody = SKPhysicsBody(texture: _shipTexture, size: CGSize(width: self.size.width, height: self.size.height))

@@ -11,9 +11,8 @@ import SpriteKit
 
 class CommandGameViewController: UIViewController {
     
-    
-    
-    var addCommandGameScene: AddCommandGameScene!
+    var addCommandGameScene = AddCommandGameScene(size: CGSize(width: 0, height: 0))
+    var initCommandGameScene = InitCommandGameScene(size: CGSize(width: 0, height: 0))
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -22,28 +21,29 @@ class CommandGameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        var scenes = [addCommandGameScene, initCommandGameScene]
+        
+        
         //main view
         let commandGameView = view as! SKView
         commandGameView.showsFPS = false
         
-        //game scene"
-        addCommandGameScene = AddCommandGameScene(size: commandGameView.bounds.size)
-        addCommandGameScene.scaleMode = .aspectFill //over the full screen
-        
-        addCommandGameScene.myDelegate = self
-        
-        //show scene
-        commandGameView.showsPhysics = false
-        commandGameView.presentScene(addCommandGameScene)
-        
-    }
-    
-    func nextView(){
-        if addCommandGameScene.levelDoneFlag {
-            print("rechead view changing point")
-            self.performSegue(withIdentifier: "segueCommandGameToCommandFeedback", sender: nil)
+        //access the right scene by CurrendCommand
+        for scene in scenes{
+            if (scene.name == CurrentCommand.name){
+                //game scene
+                scene.size = commandGameView.bounds.size
+                scene.scaleMode = .aspectFill //over the full screen
+                scene.myDelegate = self
+                
+                //show scene
+                commandGameView.showsPhysics = false
+                commandGameView.presentScene(scene)
+            }
         }
+        
     }
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? CommandFeedbackViewController{        destination.segueFromController = "CommandGameViewController"
@@ -55,7 +55,10 @@ class CommandGameViewController: UIViewController {
 extension CommandGameViewController: SceneDelegate{
     func didFinishTask(sender: SKScene) {
         print("mini game done")
-        self.performSegue(withIdentifier: "segueCommandGametoCommandFeedback", sender: nil)
+        //dispatchQueue istead of sleep method
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.performSegue(withIdentifier: "segueCommandGametoCommandFeedback", sender: nil)
+        }
     }
 }
 

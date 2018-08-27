@@ -11,10 +11,8 @@ import SpriteKit
 
 class AddCommandGameScene: SKScene, SKPhysicsContactDelegate {
     
-    weak var myDelegate: CommandGameViewController?
     
-   
-    var levelDoneFlag = false
+    weak var myDelegate: CommandGameViewController?
     
     //textures (for physicsbodies)
     let cargoTexture = SKTexture(imageNamed: "cargo")
@@ -39,6 +37,9 @@ class AddCommandGameScene: SKScene, SKPhysicsContactDelegate {
         super.init(size: size)
         self.physicsWorld.contactDelegate = self
         //physicsWorld.contactDelegate = self
+        
+        //for command identification
+        self.name = "add"
         
         //ability for user to apply an impulse to the nodes
         isUserInteractionEnabled = true
@@ -103,7 +104,6 @@ class AddCommandGameScene: SKScene, SKPhysicsContactDelegate {
         
         if shippingItems.isEmpty{
             print("ship is fully loaded")
-            levelDoneFlag = true
             myDelegate?.didFinishTask(sender: self)
         }
         
@@ -118,11 +118,6 @@ class AddCommandGameScene: SKScene, SKPhysicsContactDelegate {
         
         }
 
-}
-
-protocol SceneDelegate: AnyObject {
-    func didFinishTask(sender: SKScene)
-    
 }
 
 
