@@ -8,6 +8,7 @@ Tutorial to learn the essentials of Git and GitHub on an iPhone
 *Code contains solutions for:*
 - unwinding multiple segues from diffrent views pointing on one single view
 - use buttons as checkboxes
+- use a view as pop up view
 - create a view programmatically [CommandExplanationController]
 - fit physicsbodies to pngs content (ignore transparency) [CommandGameController]
 - auto layout
