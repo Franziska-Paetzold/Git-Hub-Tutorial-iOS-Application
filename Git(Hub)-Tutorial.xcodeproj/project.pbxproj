@@ -11,7 +11,6 @@
 		382E3F5120D9397B001761C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 382E3F4F20D9397B001761C1 /* Main.storyboard */; };
 		382E3F5320D9397C001761C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 382E3F5220D9397C001761C1 /* Assets.xcassets */; };
 		382E3F5620D9397C001761C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 382E3F5420D9397C001761C1 /* LaunchScreen.storyboard */; };
-		3839A32620EB773400769A8C /* CommandGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3839A32520EB773400769A8C /* CommandGameScene.swift */; };
 		3863E13D212CA067000CC659 /* GitExplanationShortController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863E13C212CA067000CC659 /* GitExplanationShortController.swift */; };
 		38835D4720E0FE1D00164A04 /* CommandGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38835D4620E0FE1D00164A04 /* CommandGameViewController.swift */; };
 		38835D4920E0FE4D00164A04 /* CommandExplanationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38835D4820E0FE4D00164A04 /* CommandExplanationViewController.swift */; };
@@ -21,6 +20,9 @@
 		38DD8ACE20DAA3D4000E4E34 /* GitExplanationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DD8ACB20DAA3D4000E4E34 /* GitExplanationViewController.swift */; };
 		38DD8ACF20DAA3D4000E4E34 /* StartTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DD8ACC20DAA3D4000E4E34 /* StartTutorialViewController.swift */; };
 		38DD8AD020DAA3D4000E4E34 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DD8ACD20DAA3D4000E4E34 /* ViewController.swift */; };
+		38ECB1E721345AA90000E0B1 /* AddCommandGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ECB1E621345AA80000E0B1 /* AddCommandGameScene.swift */; };
+		38ECB1EA21345AD50000E0B1 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ECB1E821345AD50000E0B1 /* PopUpViewController.swift */; };
+		38ECB1EB21345AD50000E0B1 /* CommandFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ECB1E921345AD50000E0B1 /* CommandFeedbackViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +32,6 @@
 		382E3F5220D9397C001761C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		382E3F5520D9397C001761C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		382E3F5720D9397C001761C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3839A32520EB773400769A8C /* CommandGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandGameScene.swift; sourceTree = "<group>"; };
 		3863E13C212CA067000CC659 /* GitExplanationShortController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitExplanationShortController.swift; sourceTree = "<group>"; };
 		38835D4620E0FE1D00164A04 /* CommandGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandGameViewController.swift; sourceTree = "<group>"; };
 		38835D4820E0FE4D00164A04 /* CommandExplanationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandExplanationViewController.swift; sourceTree = "<group>"; };
@@ -40,6 +41,9 @@
 		38DD8ACB20DAA3D4000E4E34 /* GitExplanationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitExplanationViewController.swift; sourceTree = "<group>"; };
 		38DD8ACC20DAA3D4000E4E34 /* StartTutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartTutorialViewController.swift; sourceTree = "<group>"; };
 		38DD8ACD20DAA3D4000E4E34 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		38ECB1E621345AA80000E0B1 /* AddCommandGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCommandGameScene.swift; sourceTree = "<group>"; };
+		38ECB1E821345AD50000E0B1 /* PopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
+		38ECB1E921345AD50000E0B1 /* CommandFeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandFeedbackViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +91,6 @@
 			isa = PBXGroup;
 			children = (
 				3896EEDB20F6200A000EF7FA /* AddCommandModel */,
-				3839A32520EB773400769A8C /* CommandGameScene.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -99,9 +102,11 @@
 				38DD8ACB20DAA3D4000E4E34 /* GitExplanationViewController.swift */,
 				38DD8ACC20DAA3D4000E4E34 /* StartTutorialViewController.swift */,
 				38DD8ACD20DAA3D4000E4E34 /* ViewController.swift */,
-				38835D4620E0FE1D00164A04 /* CommandGameViewController.swift */,
-				38835D4820E0FE4D00164A04 /* CommandExplanationViewController.swift */,
 				3863E13C212CA067000CC659 /* GitExplanationShortController.swift */,
+				38835D4820E0FE4D00164A04 /* CommandExplanationViewController.swift */,
+				38835D4620E0FE1D00164A04 /* CommandGameViewController.swift */,
+				38ECB1E921345AD50000E0B1 /* CommandFeedbackViewController.swift */,
+				38ECB1E821345AD50000E0B1 /* PopUpViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -111,6 +116,7 @@
 			children = (
 				3896EEDC20F62079000EF7FA /* ShipNode.swift */,
 				3896EEDE20F6211A000EF7FA /* CargoNode.swift */,
+				38ECB1E621345AA80000E0B1 /* AddCommandGameScene.swift */,
 			);
 			path = AddCommandModel;
 			sourceTree = "<group>";
@@ -189,14 +195,16 @@
 				38835D4720E0FE1D00164A04 /* CommandGameViewController.swift in Sources */,
 				382E3F4C20D9397B001761C1 /* AppDelegate.swift in Sources */,
 				38835D4920E0FE4D00164A04 /* CommandExplanationViewController.swift in Sources */,
-				3839A32620EB773400769A8C /* CommandGameScene.swift in Sources */,
 				38AA7A0820E38867008E7CAA /* PromiseViewController.swift in Sources */,
 				3863E13D212CA067000CC659 /* GitExplanationShortController.swift in Sources */,
 				38DD8ACF20DAA3D4000E4E34 /* StartTutorialViewController.swift in Sources */,
 				3896EEDF20F6211A000EF7FA /* CargoNode.swift in Sources */,
+				38ECB1EA21345AD50000E0B1 /* PopUpViewController.swift in Sources */,
+				38ECB1E721345AA90000E0B1 /* AddCommandGameScene.swift in Sources */,
 				3896EEDD20F62079000EF7FA /* ShipNode.swift in Sources */,
 				38DD8AD020DAA3D4000E4E34 /* ViewController.swift in Sources */,
 				38DD8ACE20DAA3D4000E4E34 /* GitExplanationViewController.swift in Sources */,
+				38ECB1EB21345AD50000E0B1 /* CommandFeedbackViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

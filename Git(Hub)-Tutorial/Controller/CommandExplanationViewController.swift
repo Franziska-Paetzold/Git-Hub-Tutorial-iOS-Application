@@ -64,6 +64,7 @@ class CommandExplanationViewController: UIViewController {
         //textView
         textView1 = UITextView()
         //the counter CurrentCommand.num chooses the name of the current command in the row of CurrentsCommand.commandOrder and so we can get from contentOfCommand the matching content for the command
+        print("COMMAAAAAND NAME \(CurrentCommand.name)")
         textView1.text = contentOfCommand[CurrentCommand.name]
         textView1.backgroundColor = .white
         textView1.textColor = .black

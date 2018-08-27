@@ -19,8 +19,8 @@ class CommandFeedbackViewController: UIViewController {
     var textView1: UITextView!
     
     let contentOfCommand =
-        ["init" : "Hinweis: add content",
-         "add" : "Hinweis: init content",
+        ["init" : "Hinweis: init content",
+         "add" : "Hinweis: add content",
          "commit" : "Hinweis: commit content",
          "status" : "Hinweis: status content",
          "help" : "Hinweis: help content"]
@@ -102,6 +102,7 @@ class CommandFeedbackViewController: UIViewController {
                     self.performSegue(withIdentifier: "segueCommandFeedbackToPopUp", sender: nil)
                 }
                 else{
+                    CurrentCommand.name = CurrentCommand.order[CurrentCommand.num]
                     self.performSegue(withIdentifier: "segueCommandFeedbackToCommandExplanation", sender: nil)
                 }
             }
