@@ -14,6 +14,8 @@ class CommandGameViewController: UIViewController {
     var addCommandGameScene: AddCommandGameScene!
     var initCommandGameScene:InitCommandGameScene!
     
+    var controlFlag = false
+    
     override var prefersStatusBarHidden: Bool {
         return true
     }
@@ -32,7 +34,9 @@ class CommandGameViewController: UIViewController {
         if (addCommandGameScene.name == CurrentCommand.name){
             addCommandGameScene.myDelegate = self
             //show scene
+            addCommandGameScene.myDelegate = self
             commandGameView.presentScene(addCommandGameScene)
+            controlFlag = true
         }
         //----init----
         initCommandGameScene = InitCommandGameScene(size: commandGameView.bounds.size)
@@ -40,10 +44,12 @@ class CommandGameViewController: UIViewController {
             initCommandGameScene.myDelegate = self
             //show scene
             commandGameView.presentScene(initCommandGameScene)
+            controlFlag = true
         }
         
-        
-      
+        if (!controlFlag){
+            print("ups")
+        }
         
     }
 
@@ -59,7 +65,7 @@ extension CommandGameViewController: SceneDelegate{
     func didFinishTask(sender: SKScene) {
         print("mini game done")
         //dispatchQueue istead of sleep method
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.performSegue(withIdentifier: "segueCommandGametoCommandFeedback", sender: nil)
         }
     }
