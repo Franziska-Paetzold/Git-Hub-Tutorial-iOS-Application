@@ -9,12 +9,9 @@
 import UIKit
 import SpriteKit
 
-class InitCommandGameScene: SKScene , SKPhysicsContactDelegate {
+class InitCommandGameScene: SKScene {
     
     weak var myDelegate: CommandGameViewController?
-    
-    //textures (for physicsbodies)
-    let shipComponentI = SKTexture(imageNamed: "cargo")
     
     //parent nodes for the other nodes of the skviw
     let backgroundNode = SKSpriteNode(imageNamed: "background")
@@ -29,7 +26,6 @@ class InitCommandGameScene: SKScene , SKPhysicsContactDelegate {
     required init?(coder aDecoder: NSCoder){
         super.init(coder: aDecoder)
     }
-    
     
     override init(size: CGSize){
         super.init(size: size)
@@ -74,17 +70,15 @@ class InitCommandGameScene: SKScene , SKPhysicsContactDelegate {
         foregroundNode.addChild(button)
     }
     
-
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
-        if (button.touchesEnded(touches: touches, scene: self)){
-            shipComponents[0].alpha = 1
-            shipComponents.remove(at: 0)
-        }
-        
+        //this order of queries prevents system crash
         if shipComponents.isEmpty{
             print("ship is fully build")
             myDelegate?.didFinishTask(sender: self)
+        }
+        else if (button.touchesEnded(touches: touches, scene: self)){
+            shipComponents[0].alpha = 1
+            shipComponents.remove(at: 0)
         }
     }
     

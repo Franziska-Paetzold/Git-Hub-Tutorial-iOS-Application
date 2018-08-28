@@ -14,8 +14,8 @@
 		3863E13D212CA067000CC659 /* GitExplanationShortController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863E13C212CA067000CC659 /* GitExplanationShortController.swift */; };
 		38835D4720E0FE1D00164A04 /* CommandGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38835D4620E0FE1D00164A04 /* CommandGameViewController.swift */; };
 		38835D4920E0FE4D00164A04 /* CommandExplanationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38835D4820E0FE4D00164A04 /* CommandExplanationViewController.swift */; };
-		3896EEDD20F62079000EF7FA /* ShipNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3896EEDC20F62079000EF7FA /* ShipNode.swift */; };
-		3896EEDF20F6211A000EF7FA /* CargoNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3896EEDE20F6211A000EF7FA /* CargoNode.swift */; };
+		3896EEDD20F62079000EF7FA /* ShipModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3896EEDC20F62079000EF7FA /* ShipModel.swift */; };
+		3896EEDF20F6211A000EF7FA /* CargoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3896EEDE20F6211A000EF7FA /* CargoModel.swift */; };
 		38AA7A0820E38867008E7CAA /* PromiseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AA7A0720E38867008E7CAA /* PromiseViewController.swift */; };
 		38DD8ACE20DAA3D4000E4E34 /* GitExplanationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DD8ACB20DAA3D4000E4E34 /* GitExplanationViewController.swift */; };
 		38DD8ACF20DAA3D4000E4E34 /* StartTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38DD8ACC20DAA3D4000E4E34 /* StartTutorialViewController.swift */; };
@@ -27,6 +27,8 @@
 		38ECB1F02134748E0000E0B1 /* ButtonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ECB1EF2134748E0000E0B1 /* ButtonModel.swift */; };
 		38ECB1F221347D450000E0B1 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ECB1F121347D450000E0B1 /* Protocols.swift */; };
 		38ECB1F521349D440000E0B1 /* ShipComponentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ECB1F421349D440000E0B1 /* ShipComponentModel.swift */; };
+		38ECB1FA2134DB9B0000E0B1 /* CommitCommandGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ECB1F92134DB9B0000E0B1 /* CommitCommandGameScene.swift */; };
+		38ECB1FD2134DD780000E0B1 /* StatusCommandGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ECB1FC2134DD780000E0B1 /* StatusCommandGameScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,8 +41,8 @@
 		3863E13C212CA067000CC659 /* GitExplanationShortController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitExplanationShortController.swift; sourceTree = "<group>"; };
 		38835D4620E0FE1D00164A04 /* CommandGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandGameViewController.swift; sourceTree = "<group>"; };
 		38835D4820E0FE4D00164A04 /* CommandExplanationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandExplanationViewController.swift; sourceTree = "<group>"; };
-		3896EEDC20F62079000EF7FA /* ShipNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipNode.swift; sourceTree = "<group>"; };
-		3896EEDE20F6211A000EF7FA /* CargoNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CargoNode.swift; sourceTree = "<group>"; };
+		3896EEDC20F62079000EF7FA /* ShipModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipModel.swift; sourceTree = "<group>"; };
+		3896EEDE20F6211A000EF7FA /* CargoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CargoModel.swift; sourceTree = "<group>"; };
 		38AA7A0720E38867008E7CAA /* PromiseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromiseViewController.swift; sourceTree = "<group>"; };
 		38DD8ACB20DAA3D4000E4E34 /* GitExplanationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitExplanationViewController.swift; sourceTree = "<group>"; };
 		38DD8ACC20DAA3D4000E4E34 /* StartTutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartTutorialViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +54,8 @@
 		38ECB1EF2134748E0000E0B1 /* ButtonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonModel.swift; sourceTree = "<group>"; };
 		38ECB1F121347D450000E0B1 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		38ECB1F421349D440000E0B1 /* ShipComponentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipComponentModel.swift; sourceTree = "<group>"; };
+		38ECB1F92134DB9B0000E0B1 /* CommitCommandGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitCommandGameScene.swift; sourceTree = "<group>"; };
+		38ECB1FC2134DD780000E0B1 /* StatusCommandGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCommandGameScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +104,9 @@
 			children = (
 				38ECB1EE213474460000E0B1 /* GeneralModels */,
 				38ECB1F321349CF10000E0B1 /* InitCommandModels */,
-				3896EEDB20F6200A000EF7FA /* AddCommandModel */,
+				3896EEDB20F6200A000EF7FA /* AddCommandModels */,
+				38ECB1F82134DB450000E0B1 /* CommitCommandModels */,
+				38ECB1FB2134DC870000E0B1 /* StatusCommandModels */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -121,14 +127,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		3896EEDB20F6200A000EF7FA /* AddCommandModel */ = {
+		3896EEDB20F6200A000EF7FA /* AddCommandModels */ = {
 			isa = PBXGroup;
 			children = (
 				38ECB1E621345AA80000E0B1 /* AddCommandGameScene.swift */,
-				3896EEDC20F62079000EF7FA /* ShipNode.swift */,
-				3896EEDE20F6211A000EF7FA /* CargoNode.swift */,
+				3896EEDC20F62079000EF7FA /* ShipModel.swift */,
+				3896EEDE20F6211A000EF7FA /* CargoModel.swift */,
 			);
-			path = AddCommandModel;
+			path = AddCommandModels;
 			sourceTree = "<group>";
 		};
 		38ECB1EE213474460000E0B1 /* GeneralModels */ = {
@@ -147,6 +153,22 @@
 				38ECB1F421349D440000E0B1 /* ShipComponentModel.swift */,
 			);
 			path = InitCommandModels;
+			sourceTree = "<group>";
+		};
+		38ECB1F82134DB450000E0B1 /* CommitCommandModels */ = {
+			isa = PBXGroup;
+			children = (
+				38ECB1F92134DB9B0000E0B1 /* CommitCommandGameScene.swift */,
+			);
+			path = CommitCommandModels;
+			sourceTree = "<group>";
+		};
+		38ECB1FB2134DC870000E0B1 /* StatusCommandModels */ = {
+			isa = PBXGroup;
+			children = (
+				38ECB1FC2134DD780000E0B1 /* StatusCommandGameScene.swift */,
+			);
+			path = StatusCommandModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,15 +250,17 @@
 				38ECB1F221347D450000E0B1 /* Protocols.swift in Sources */,
 				3863E13D212CA067000CC659 /* GitExplanationShortController.swift in Sources */,
 				38DD8ACF20DAA3D4000E4E34 /* StartTutorialViewController.swift in Sources */,
-				3896EEDF20F6211A000EF7FA /* CargoNode.swift in Sources */,
+				3896EEDF20F6211A000EF7FA /* CargoModel.swift in Sources */,
 				38ECB1EA21345AD50000E0B1 /* PopUpViewController.swift in Sources */,
 				38ECB1F521349D440000E0B1 /* ShipComponentModel.swift in Sources */,
 				38ECB1E721345AA90000E0B1 /* AddCommandGameScene.swift in Sources */,
-				3896EEDD20F62079000EF7FA /* ShipNode.swift in Sources */,
+				38ECB1FD2134DD780000E0B1 /* StatusCommandGameScene.swift in Sources */,
+				3896EEDD20F62079000EF7FA /* ShipModel.swift in Sources */,
 				38DD8AD020DAA3D4000E4E34 /* ViewController.swift in Sources */,
 				38DD8ACE20DAA3D4000E4E34 /* GitExplanationViewController.swift in Sources */,
 				38ECB1EB21345AD50000E0B1 /* CommandFeedbackViewController.swift in Sources */,
 				38ECB1F02134748E0000E0B1 /* ButtonModel.swift in Sources */,
+				38ECB1FA2134DB9B0000E0B1 /* CommitCommandGameScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

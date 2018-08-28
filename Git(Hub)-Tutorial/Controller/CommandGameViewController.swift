@@ -13,6 +13,8 @@ class CommandGameViewController: UIViewController {
     
     var addCommandGameScene: AddCommandGameScene!
     var initCommandGameScene:InitCommandGameScene!
+    var commitCommandGameScene: CommitCommandGameScene!
+    var statusCommandGameScene: StatusCommandGameScene!
     
     var controlFlag = false
     
@@ -44,6 +46,22 @@ class CommandGameViewController: UIViewController {
             initCommandGameScene.myDelegate = self
             //show scene
             commandGameView.presentScene(initCommandGameScene)
+            controlFlag = true
+        }
+        //----commit----
+        commitCommandGameScene = CommitCommandGameScene(size: commandGameView.bounds.size)
+        if (commitCommandGameScene.name == CurrentCommand.name){
+            commitCommandGameScene.myDelegate = self
+            //show scene
+            commandGameView.presentScene(commitCommandGameScene)
+            controlFlag = true
+        }
+        //----status----
+        statusCommandGameScene = StatusCommandGameScene(size: commandGameView.bounds.size)
+        if (statusCommandGameScene.name == CurrentCommand.name){
+            statusCommandGameScene.myDelegate = self
+            //show scene
+            commandGameView.presentScene(statusCommandGameScene)
             controlFlag = true
         }
         

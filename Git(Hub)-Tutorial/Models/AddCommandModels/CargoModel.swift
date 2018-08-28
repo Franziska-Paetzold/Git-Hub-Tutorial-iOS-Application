@@ -1,5 +1,5 @@
 //
-//  CargoNode.swift
+//  CargoModel.swift
 //  Git(Hub)-Tutorial
 //
 //  Created by Franziska Pätzold on 11.07.18.
@@ -9,7 +9,7 @@
 import UIKit
 import SpriteKit
 
-class CargoNode: SKSpriteNode {
+class CargoModel: SKSpriteNode {
     
     let collisionCategory: UInt32 = 0x1 << 1
     
