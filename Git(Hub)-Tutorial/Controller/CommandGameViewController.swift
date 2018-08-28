@@ -37,7 +37,7 @@ class CommandGameViewController: UIViewController {
         //----init----
         initCommandGameScene = InitCommandGameScene(size: commandGameView.bounds.size)
         if (initCommandGameScene.name == CurrentCommand.name){
-            addCommandGameScene.myDelegate = self
+            initCommandGameScene.myDelegate = self
             //show scene
             commandGameView.presentScene(initCommandGameScene)
         }
