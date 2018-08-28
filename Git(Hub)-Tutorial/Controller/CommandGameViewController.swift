@@ -11,8 +11,8 @@ import SpriteKit
 
 class CommandGameViewController: UIViewController {
     
-    var addCommandGameScene = AddCommandGameScene(size: CGSize(width: 0, height: 0))
-    var initCommandGameScene = InitCommandGameScene(size: CGSize(width: 0, height: 0))
+    var addCommandGameScene: AddCommandGameScene!
+    var initCommandGameScene:InitCommandGameScene!
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -21,26 +21,29 @@ class CommandGameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var scenes = [addCommandGameScene, initCommandGameScene]
-        
-        
         //main view
         let commandGameView = view as! SKView
         commandGameView.showsFPS = false
+        commandGameView.showsPhysics = false
         
-        //access the right scene by CurrendCommand
-        for scene in scenes{
-            if (scene.name == CurrentCommand.name){
-                //game scene
-                scene.size = commandGameView.bounds.size
-                scene.scaleMode = .aspectFill //over the full screen
-                scene.myDelegate = self
-                
-                //show scene
-                commandGameView.showsPhysics = false
-                commandGameView.presentScene(scene)
-            }
+        //TODO: refactoring
+        //----add----
+        addCommandGameScene = AddCommandGameScene(size: commandGameView.bounds.size)
+        if (addCommandGameScene.name == CurrentCommand.name){
+            addCommandGameScene.myDelegate = self
+            //show scene
+            commandGameView.presentScene(addCommandGameScene)
         }
+        //----init----
+        initCommandGameScene = InitCommandGameScene(size: commandGameView.bounds.size)
+        if (initCommandGameScene.name == CurrentCommand.name){
+            addCommandGameScene.myDelegate = self
+            //show scene
+            commandGameView.presentScene(initCommandGameScene)
+        }
+        
+        
+      
         
     }
 

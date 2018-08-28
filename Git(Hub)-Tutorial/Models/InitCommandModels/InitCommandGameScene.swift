@@ -11,7 +11,6 @@ import SpriteKit
 
 class InitCommandGameScene: SKScene , SKPhysicsContactDelegate {
     
-    
     weak var myDelegate: CommandGameViewController?
     
     //textures (for physicsbodies)
@@ -37,6 +36,7 @@ class InitCommandGameScene: SKScene , SKPhysicsContactDelegate {
         
         //for command identification
         self.name = "init"
+        self.scaleMode = .aspectFill
         
         //ability for user to apply an impulse to the nodes
         isUserInteractionEnabled = true

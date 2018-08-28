@@ -40,6 +40,7 @@ class AddCommandGameScene: SKScene, SKPhysicsContactDelegate {
         
         //for command identification
         self.name = "add"
+        self.scaleMode = .aspectFill
         
         //ability for user to apply an impulse to the nodes
         isUserInteractionEnabled = true
