@@ -1048,7 +1048,8 @@
         <image name="vcs_throwOut" width="1412" height="966"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="4AI-wO-M1z"/>
         <segue reference="E5m-J7-U6p"/>
-        <segue reference="4wt-Os-Gx1"/>
+        <segue reference="724-yy-cBD"/>
     </inferredMetricsTieBreakers>
 </document>

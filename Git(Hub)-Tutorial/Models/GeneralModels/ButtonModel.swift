@@ -25,7 +25,7 @@ class ButtonModel: SKSpriteNode {
         self.init(texture: buttonTexture, color: .black, size: CGSize(width: buttonTexture.size().width, height: buttonTexture.size().height))
         
         //used content
-        self.color = SKColor.red
+        self.color = .red
         self.size = CGSize(width: 100, height: 44)
         // self.position = CGPoint(x: size.width/2, y: size.heigth/2)
         self.position = position

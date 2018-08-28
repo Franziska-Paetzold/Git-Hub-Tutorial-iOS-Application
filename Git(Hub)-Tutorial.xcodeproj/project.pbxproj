@@ -29,6 +29,7 @@
 		38ECB1F521349D440000E0B1 /* ShipComponentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ECB1F421349D440000E0B1 /* ShipComponentModel.swift */; };
 		38ECB1FA2134DB9B0000E0B1 /* CommitCommandGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ECB1F92134DB9B0000E0B1 /* CommitCommandGameScene.swift */; };
 		38ECB1FD2134DD780000E0B1 /* StatusCommandGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ECB1FC2134DD780000E0B1 /* StatusCommandGameScene.swift */; };
+		38ECB1FF21357C760000E0B1 /* CommandGameSceneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38ECB1FE21357C760000E0B1 /* CommandGameSceneModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		38ECB1F421349D440000E0B1 /* ShipComponentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipComponentModel.swift; sourceTree = "<group>"; };
 		38ECB1F92134DB9B0000E0B1 /* CommitCommandGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitCommandGameScene.swift; sourceTree = "<group>"; };
 		38ECB1FC2134DD780000E0B1 /* StatusCommandGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCommandGameScene.swift; sourceTree = "<group>"; };
+		38ECB1FE21357C760000E0B1 /* CommandGameSceneModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandGameSceneModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 		38ECB1EE213474460000E0B1 /* GeneralModels */ = {
 			isa = PBXGroup;
 			children = (
+				38ECB1FE21357C760000E0B1 /* CommandGameSceneModel.swift */,
 				38ECB1EF2134748E0000E0B1 /* ButtonModel.swift */,
 				38ECB1F121347D450000E0B1 /* Protocols.swift */,
 			);
@@ -260,6 +263,7 @@
 				38DD8ACE20DAA3D4000E4E34 /* GitExplanationViewController.swift in Sources */,
 				38ECB1EB21345AD50000E0B1 /* CommandFeedbackViewController.swift in Sources */,
 				38ECB1F02134748E0000E0B1 /* ButtonModel.swift in Sources */,
+				38ECB1FF21357C760000E0B1 /* CommandGameSceneModel.swift in Sources */,
 				38ECB1FA2134DB9B0000E0B1 /* CommitCommandGameScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

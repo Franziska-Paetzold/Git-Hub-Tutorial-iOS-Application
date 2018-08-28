@@ -1,5 +1,5 @@
 //
-//  StatusCommandGameScene.swift
+//  CommandGameSceneModel.swift
 //  Git(Hub)-Tutorial
 //
 //  Created by Franziska Pätzold on 28.08.18.
@@ -9,27 +9,26 @@
 import UIKit
 import SpriteKit
 
-class StatusCommandGameScene: SKScene {
+class CommandGameSceneModel: SKScene {
     weak var myDelegate: CommandGameViewController?
     
     //parent nodes for the other nodes of the skviw
     let backgroundNode = SKSpriteNode(imageNamed: "background")
     let foregroundNode = SKSpriteNode()
     
-    var paperNode = SKSpriteNode(imageNamed: "placeholder150x50")
-    var paperOpen = false
     
     
     required init?(coder aDecoder: NSCoder){
         super.init(coder: aDecoder)
     }
     
-    
     override init(size: CGSize){
+        print("REACHED mothers initialzer ")
+        
         super.init(size: size)
         
         //for command identification
-        self.name = "status"
+        self.name = "init"
         self.scaleMode = .aspectFill
         
         //ability for user to apply an impulse to the nodes
@@ -46,30 +45,6 @@ class StatusCommandGameScene: SKScene {
         
         //============add foreground==============
         addChild(foregroundNode)
-        
-        
-        //============ initialization and configuration paper============
-        foregroundNode.addChild(paperNode)
     }
-    
-    
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for touch in touches {
-
-            let touchPosition = touch.location(in: self)
-            let touchedNode = self.atPoint(touchPosition)
-            
-            if paperNode == touchedNode {
-                paperOpen = true
-            }
-            
-            if (paperOpen){
-                //paperNode.image wescheln
-                print("paper open")
-                myDelegate?.didFinishTask(sender: self)
-            }
-        }
-    }
-    
-    
+        
 }
