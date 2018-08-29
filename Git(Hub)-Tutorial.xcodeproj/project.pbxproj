@@ -11,6 +11,7 @@
 		382E3F5120D9397B001761C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 382E3F4F20D9397B001761C1 /* Main.storyboard */; };
 		382E3F5320D9397C001761C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 382E3F5220D9397C001761C1 /* Assets.xcassets */; };
 		382E3F5620D9397C001761C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 382E3F5420D9397C001761C1 /* LaunchScreen.storyboard */; };
+		3847B1FE2136BA1300E6B842 /* HelpCommandGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3847B1FD2136BA1300E6B842 /* HelpCommandGameScene.swift */; };
 		3863E13D212CA067000CC659 /* GitExplanationShortController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3863E13C212CA067000CC659 /* GitExplanationShortController.swift */; };
 		38835D4720E0FE1D00164A04 /* CommandGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38835D4620E0FE1D00164A04 /* CommandGameViewController.swift */; };
 		38835D4920E0FE4D00164A04 /* CommandExplanationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38835D4820E0FE4D00164A04 /* CommandExplanationViewController.swift */; };
@@ -39,6 +40,7 @@
 		382E3F5220D9397C001761C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		382E3F5520D9397C001761C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		382E3F5720D9397C001761C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3847B1FD2136BA1300E6B842 /* HelpCommandGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpCommandGameScene.swift; sourceTree = "<group>"; };
 		3863E13C212CA067000CC659 /* GitExplanationShortController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitExplanationShortController.swift; sourceTree = "<group>"; };
 		38835D4620E0FE1D00164A04 /* CommandGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandGameViewController.swift; sourceTree = "<group>"; };
 		38835D4820E0FE4D00164A04 /* CommandExplanationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandExplanationViewController.swift; sourceTree = "<group>"; };
@@ -105,12 +107,21 @@
 			isa = PBXGroup;
 			children = (
 				38ECB1EE213474460000E0B1 /* GeneralModels */,
-				38ECB1F321349CF10000E0B1 /* InitCommandModels */,
-				3896EEDB20F6200A000EF7FA /* AddCommandModels */,
-				38ECB1F82134DB450000E0B1 /* CommitCommandModels */,
-				38ECB1FB2134DC870000E0B1 /* StatusCommandModels */,
+				38ECB1F321349CF10000E0B1 /* InitCommand */,
+				3896EEDB20F6200A000EF7FA /* AddCommand */,
+				38ECB1F82134DB450000E0B1 /* CommitCommand */,
+				38ECB1FB2134DC870000E0B1 /* StatusCommand */,
+				3847B1FC2136B9DE00E6B842 /* HelpCommand */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		3847B1FC2136B9DE00E6B842 /* HelpCommand */ = {
+			isa = PBXGroup;
+			children = (
+				3847B1FD2136BA1300E6B842 /* HelpCommandGameScene.swift */,
+			);
+			path = HelpCommand;
 			sourceTree = "<group>";
 		};
 		38835D4120DFDA6600164A04 /* Controller */ = {
@@ -129,14 +140,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		3896EEDB20F6200A000EF7FA /* AddCommandModels */ = {
+		3896EEDB20F6200A000EF7FA /* AddCommand */ = {
 			isa = PBXGroup;
 			children = (
 				38ECB1E621345AA80000E0B1 /* AddCommandGameScene.swift */,
 				3896EEDC20F62079000EF7FA /* ShipModel.swift */,
 				3896EEDE20F6211A000EF7FA /* CargoModel.swift */,
 			);
-			path = AddCommandModels;
+			path = AddCommand;
 			sourceTree = "<group>";
 		};
 		38ECB1EE213474460000E0B1 /* GeneralModels */ = {
@@ -149,29 +160,29 @@
 			path = GeneralModels;
 			sourceTree = "<group>";
 		};
-		38ECB1F321349CF10000E0B1 /* InitCommandModels */ = {
+		38ECB1F321349CF10000E0B1 /* InitCommand */ = {
 			isa = PBXGroup;
 			children = (
 				38ECB1EC21345F500000E0B1 /* InitCommandGameScene.swift */,
 				38ECB1F421349D440000E0B1 /* ShipComponentModel.swift */,
 			);
-			path = InitCommandModels;
+			path = InitCommand;
 			sourceTree = "<group>";
 		};
-		38ECB1F82134DB450000E0B1 /* CommitCommandModels */ = {
+		38ECB1F82134DB450000E0B1 /* CommitCommand */ = {
 			isa = PBXGroup;
 			children = (
 				38ECB1F92134DB9B0000E0B1 /* CommitCommandGameScene.swift */,
 			);
-			path = CommitCommandModels;
+			path = CommitCommand;
 			sourceTree = "<group>";
 		};
-		38ECB1FB2134DC870000E0B1 /* StatusCommandModels */ = {
+		38ECB1FB2134DC870000E0B1 /* StatusCommand */ = {
 			isa = PBXGroup;
 			children = (
 				38ECB1FC2134DD780000E0B1 /* StatusCommandGameScene.swift */,
 			);
-			path = StatusCommandModels;
+			path = StatusCommand;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				38835D4720E0FE1D00164A04 /* CommandGameViewController.swift in Sources */,
+				3847B1FE2136BA1300E6B842 /* HelpCommandGameScene.swift in Sources */,
 				382E3F4C20D9397B001761C1 /* AppDelegate.swift in Sources */,
 				38835D4920E0FE4D00164A04 /* CommandExplanationViewController.swift in Sources */,
 				38AA7A0820E38867008E7CAA /* PromiseViewController.swift in Sources */,

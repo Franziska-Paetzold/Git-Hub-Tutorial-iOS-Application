@@ -15,8 +15,16 @@ class InitCommandGameScene: CommandGameSceneModel {
     
     var button = ButtonModel()
     
-    override convenience init(size: CGSize) {
-        self.init(size: size)
+   private override init(size: CGSize) {
+        super.init(size: size)
+    }
+    
+    convenience init(newSize: CGSize){
+        self.init(size: newSize)
+        
+        //for command identification
+        self.name = "init"
+        
         //============ initialization and configuration ship components============
         //shipComponent from shipComponentModel
         let shipComponentINode = ShipComponentModel(textureName: "shipComponentI", position: CGPoint(x: size.width/2, y: (size.height/5)*1.5))
@@ -35,6 +43,10 @@ class InitCommandGameScene: CommandGameSceneModel {
         //button from buttonModel
         button = ButtonModel(position: CGPoint(x: size.width/2, y: (size.height/5)*0.5), text: "Bauen!")
         foregroundNode.addChild(button)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {

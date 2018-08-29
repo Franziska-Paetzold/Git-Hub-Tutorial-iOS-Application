@@ -10,30 +10,23 @@ import UIKit
 import SpriteKit
 
 class CommandGameSceneModel: SKScene {
+    
     weak var myDelegate: CommandGameViewController?
     
     //parent nodes for the other nodes of the skviw
     let backgroundNode = SKSpriteNode(imageNamed: "background")
     let foregroundNode = SKSpriteNode()
     
-    
-    
     required init?(coder aDecoder: NSCoder){
         super.init(coder: aDecoder)
     }
     
-    override init(size: CGSize){
-        print("REACHED mothers initialzer ")
-        
+    override  init(size: CGSize) {
         super.init(size: size)
-        
-        //for command identification
-        self.name = "init"
         self.scaleMode = .aspectFill
         
         //ability for user to apply an impulse to the nodes
         isUserInteractionEnabled = true
-        
         
         //============configuration background==============
         backgroundNode.size.width = frame.size.width //sets the Node to the views frame
@@ -41,10 +34,11 @@ class CommandGameSceneModel: SKScene {
         //position is a point in the view and anchorPoint is the a relative point in the picture that adjusts to the position point
         backgroundNode.anchorPoint = CGPoint(x: 0.5, y: 0.0) //on which point the node is set (0.5 & 0 is bottom center of the node)
         backgroundNode.position = CGPoint (x: size.width / 2.0, y: 0.0) //set node to the middle and the bottom of the scene
-        addChild(backgroundNode) // adds node to scene
+        super.addChild(backgroundNode) // adds node to scene
         
         //============add foreground==============
-        addChild(foregroundNode)
+        super.addChild(foregroundNode)
+    
     }
-        
+    
 }

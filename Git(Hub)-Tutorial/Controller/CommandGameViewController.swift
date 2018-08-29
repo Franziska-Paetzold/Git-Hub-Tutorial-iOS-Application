@@ -32,16 +32,15 @@ class CommandGameViewController: UIViewController {
         
         //TODO: refactoring
         //----add----
-        addCommandGameScene = AddCommandGameScene(size: commandGameView.bounds.size)
+        addCommandGameScene = AddCommandGameScene(newSize: commandGameView.bounds.size)
         if (addCommandGameScene.name == CurrentCommand.name){
             addCommandGameScene.myDelegate = self
             //show scene
-            addCommandGameScene.myDelegate = self
             commandGameView.presentScene(addCommandGameScene)
             controlFlag = true
         }
         //----init----
-        initCommandGameScene = InitCommandGameScene(size: commandGameView.bounds.size)
+        initCommandGameScene = InitCommandGameScene(newSize: commandGameView.bounds.size)
         if (initCommandGameScene.name == CurrentCommand.name){
             initCommandGameScene.myDelegate = self
             //show scene
@@ -49,7 +48,7 @@ class CommandGameViewController: UIViewController {
             controlFlag = true
         }
         //----commit----
-        commitCommandGameScene = CommitCommandGameScene(size: commandGameView.bounds.size)
+        commitCommandGameScene = CommitCommandGameScene(newSize: commandGameView.bounds.size)
         if (commitCommandGameScene.name == CurrentCommand.name){
             commitCommandGameScene.myDelegate = self
             //show scene
@@ -57,7 +56,7 @@ class CommandGameViewController: UIViewController {
             controlFlag = true
         }
         //----status----
-        statusCommandGameScene = StatusCommandGameScene(size: commandGameView.bounds.size)
+        statusCommandGameScene = StatusCommandGameScene(newSize: commandGameView.bounds.size)
         if (statusCommandGameScene.name == CurrentCommand.name){
             statusCommandGameScene.myDelegate = self
             //show scene
