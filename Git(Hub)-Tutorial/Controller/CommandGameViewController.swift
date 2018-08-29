@@ -11,11 +11,6 @@ import SpriteKit
 
 class CommandGameViewController: UIViewController {
     
-    var addCommandGameScene: AddCommandGameScene!
-    var initCommandGameScene:InitCommandGameScene!
-    var commitCommandGameScene: CommitCommandGameScene!
-    var statusCommandGameScene: StatusCommandGameScene!
-    
     var controlFlag = false
     
     override var prefersStatusBarHidden: Bool {
@@ -31,41 +26,24 @@ class CommandGameViewController: UIViewController {
         commandGameView.showsPhysics = false
         
         //TODO: refactoring
-        //----add----
-        addCommandGameScene = AddCommandGameScene(newSize: commandGameView.bounds.size)
-        if (addCommandGameScene.name == CurrentCommand.name){
-            addCommandGameScene.myDelegate = self
-            //show scene
-            commandGameView.presentScene(addCommandGameScene)
-            controlFlag = true
-        }
-        //----init----
-        initCommandGameScene = InitCommandGameScene(newSize: commandGameView.bounds.size)
-        if (initCommandGameScene.name == CurrentCommand.name){
-            initCommandGameScene.myDelegate = self
-            //show scene
-            commandGameView.presentScene(initCommandGameScene)
-            controlFlag = true
-        }
-        //----commit----
-        commitCommandGameScene = CommitCommandGameScene(newSize: commandGameView.bounds.size)
-        if (commitCommandGameScene.name == CurrentCommand.name){
-            commitCommandGameScene.myDelegate = self
-            //show scene
-            commandGameView.presentScene(commitCommandGameScene)
-            controlFlag = true
-        }
-        //----status----
-        statusCommandGameScene = StatusCommandGameScene(newSize: commandGameView.bounds.size)
-        if (statusCommandGameScene.name == CurrentCommand.name){
-            statusCommandGameScene.myDelegate = self
-            //show scene
-            commandGameView.presentScene(statusCommandGameScene)
-            controlFlag = true
+        let addCommandGameScene = AddCommandGameScene(newSize: commandGameView.bounds.size)
+        let initCommandGameScene = InitCommandGameScene(newSize: commandGameView.bounds.size)
+        let commitCommandGameScene = CommitCommandGameScene(newSize: commandGameView.bounds.size)
+        let statusCommandGameScene = StatusCommandGameScene(newSize: commandGameView.bounds.size)
+        
+        let scenes = [addCommandGameScene, initCommandGameScene, commitCommandGameScene, statusCommandGameScene]
+        
+        for scene in scenes{
+            if (scene.name == CurrentCommand.name){
+                scene.myDelegate = self
+                //show scene
+                commandGameView.presentScene(scene)
+                controlFlag = true
+            }
         }
         
         if (!controlFlag){
-            print("ups")
+            print("no more commands implemented")
         }
         
     }
