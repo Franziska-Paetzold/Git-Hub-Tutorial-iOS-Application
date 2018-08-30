@@ -10,10 +10,11 @@ import UIKit
 import SpriteKit
 
 class AddCommandGameScene: CommandGameSceneModel, SKPhysicsContactDelegate {
-    
-    //textures (for physicsbodies)
-    let cargoTexture = SKTexture(imageNamed: "cargo")
-    
+  
+    var displayIsTouched = false
+    var detectedNodeContact = false
+    var contactNode: SKNode!
+    var selectedNode: SKNode!
     //collects the cargoNodes
     var shippingItems: [SKNode] = []
     
@@ -32,28 +33,48 @@ class AddCommandGameScene: CommandGameSceneModel, SKPhysicsContactDelegate {
     convenience init(newSize: CGSize){
         self.init(size: newSize)
         self.physicsWorld.contactDelegate = self
-        //physicsWorld.contactDelegate = self
+        //self.physicsWorld.gravity = CGVector(dx: 0, dy: 0)
         
         //for command identification
         self.name = "add"
         
         //============ initialization and configuration ship============
         //ship from shipModel
-        let shipNode = ShipModel(position: CGPoint(x: (size.width/5)*5, y: (size.height/5)*0), physicsBodyEnabled: true)
+        let shipNode = ShipModel(position: CGPoint(x: (size.width/5)*3, y: (size.height/5)*0.7), physicsBodyEnabled: true)
         foregroundNode.addChild(shipNode)
         
+       
+        
+        //============initialization and configuration bridge============
+        
+        let bridgeNode = SKSpriteNode(imageNamed: "bridge")
+        bridgeNode.size = CGSize(width: size.width/5*4, height: size.width/5*2)
+            bridgeNode.position = CGPoint(x: size.width/5*2, y: size.height/10*8.5)
+        foregroundNode.addChild(bridgeNode)
+        
         //============initialization and configuration cargo============
-        let cargoNode = CargoModel(contactTestBitMask: shipNode.collisionCategory)
+        let cargoNode = CargoModel(contactTestBitMask: shipNode.collisionCategory, position: CGPoint(x: size.width/2, y: size.height/10*9))
         foregroundNode.addChild(cargoNode)
         shippingItems.append(cargoNode)
+        
+        
+        
     }
+    
+    override func update(_ currentTime: TimeInterval) {
+        
+        if ((detectedNodeContact) && (displayIsTouched == false))
+        {
+            removeShippingItem()
+            detectedNodeContact = false
+        }
+    }
+    
     
     
     //needs isUserInteractionEnabled = true in initializer
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
-            
-            myDelegate?.didFinishTask(sender: self)
             let touchPosition = touch.location(in: self)
             let touchedNode = self.atPoint(touchPosition)
         
@@ -65,36 +86,44 @@ class AddCommandGameScene: CommandGameSceneModel, SKPhysicsContactDelegate {
         }
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        displayIsTouched = true
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        displayIsTouched = false
+    }
+    
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        displayIsTouched = false
+    }
+    
     func didBegin(_ contact: SKPhysicsContact) {
         print ("contact begin")
-        //a: represents first body in the contact (cargo) alias the selected node, b: property represents second body
-        let selectedNode = contact.bodyA.node!
-        let contactNode = contact.bodyB.node!
+        //a: represents first body in the contact (ship) , b: property represents second body (cargo) alias the selected node
+        contactNode = contact.bodyA.node!
+        selectedNode = contact.bodyB.node!
         
-        if contactNode.name == "SHIP" {
+        detectedNodeContact = true
+      
+        
+    }
+    
+    func removeShippingItem(){
+        if (contactNode.name == "SHIP") {
             selectedNode.removeFromParent()
-            print("removed cargo")
             if let itemIndex = shippingItems.index(of: selectedNode){
+                print("index II: \(itemIndex)")
                 shippingItems.remove(at: itemIndex)
             }
         }
         
-        if shippingItems.isEmpty{
+        if (shippingItems.isEmpty){
             print("ship is fully loaded")
             myDelegate?.didFinishTask(sender: self)
         }
         
-        
-        //TODO: add message on screen "Super, Schiff ist voll beladen!"
-        //ToDO: Trigger for segue to the next screen
     }
-    
-    //remove package node if it contacts the ship
-    func didEnd(_ contact: SKPhysicsContact) {
-        print("contact end")
-        
-        }
-
 }
 
 

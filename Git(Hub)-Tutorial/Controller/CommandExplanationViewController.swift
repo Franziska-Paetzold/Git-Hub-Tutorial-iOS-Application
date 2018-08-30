@@ -9,8 +9,11 @@
 import UIKit
 
 struct CurrentCommand{
+    
+    //static var num: Int!
     static var num: Int! = 0
-    static let order = ["init", "add", "commit", "status", "help"]
+    //static let order = ["init", "add", "commit", "status", "help"]
+    static let order = ["add"]
     static var name = CurrentCommand.order[CurrentCommand.num]
 }
 

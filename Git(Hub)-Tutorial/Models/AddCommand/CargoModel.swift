@@ -17,23 +17,22 @@ class CargoModel: SKSpriteNode {
         super.init(texture: texture, color: color, size: size)
     }
     
-    convenience init(contactTestBitMask: UInt32) {
+    convenience init(contactTestBitMask: UInt32, position: CGPoint) {
         //let cargoTexture = SKTexture(imageNamed: "cargo")
         self.init(texture: SKTexture(imageNamed: "cargo"), color: .black, size: CGSize(width: 100, height: 100))
         self.name = "CARGO"
+        self.position = position
         
         //default anchor is in the middle
-        self.position = CGPoint(x: size.width/2.0, y: size.height/10*9)
         if let cargoTexture = self.texture{
             self.physicsBody = SKPhysicsBody(texture: cargoTexture, size: CGSize(width: self.size.width, height: self.size.height))
             
+            
             //false, because the package shouldnt fall out of the screen
             self.physicsBody?.isDynamic = false
-            //no gravity
             self.physicsBody?.affectedByGravity = false
             //stop rotation by collision
             self.physicsBody?.allowsRotation = false
-            self.physicsBody = SKPhysicsBody(texture: cargoTexture, size: CGSize(width: self.size.width, height: self.size.height))
             
             self.physicsBody?.categoryBitMask = collisionCategory
             self.physicsBody?.contactTestBitMask = contactTestBitMask

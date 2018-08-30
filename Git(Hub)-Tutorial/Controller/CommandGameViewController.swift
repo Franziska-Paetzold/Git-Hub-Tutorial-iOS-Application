@@ -23,7 +23,7 @@ class CommandGameViewController: UIViewController {
         //main view
         let commandGameView = view as! SKView
         commandGameView.showsFPS = false
-        commandGameView.showsPhysics = false
+        commandGameView.showsPhysics = true
         
         //TODO: refactoring
         let addCommandGameScene = AddCommandGameScene(newSize: commandGameView.bounds.size)

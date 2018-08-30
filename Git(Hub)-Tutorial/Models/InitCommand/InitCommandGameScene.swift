@@ -27,15 +27,15 @@ class InitCommandGameScene: CommandGameSceneModel {
         
         //============ initialization and configuration ship components============
         //shipComponent from shipComponentModel
-        let shipComponentINode = ShipComponentModel(textureName: "shipComponentI", position: CGPoint(x: size.width/2, y: (size.height/5)*1.5))
+        let shipComponentINode = ShipComponentModel(textureName: "shipHull", position: CGPoint(x: size.width/2, y: (size.height/5)*1.5))
             foregroundNode.addChild(shipComponentINode)
             shipComponents.append(shipComponentINode)
         
-        let shipComponentIINode = ShipComponentModel(textureName: "shipComponentII", position: CGPoint(x: (size.width/5)*2, y: (size.height/5)*2.925))
+        let shipComponentIINode = ShipComponentModel(textureName: "shipMast", position: CGPoint(x: (size.width/5)*2, y: (size.height/5)*2.925))
             foregroundNode.addChild(shipComponentIINode)
             shipComponents.append(shipComponentIINode)
         
-        let shipComponentIIINode = ShipComponentModel(textureName: "shipComponentIII", position: CGPoint(x: (size.width/5)*3, y: (size.height/5)*3.5))
+        let shipComponentIIINode = ShipComponentModel(textureName: "shipFlag", position: CGPoint(x: (size.width/5)*3, y: (size.height/5)*3.5))
             foregroundNode.addChild(shipComponentIIINode)
             shipComponents.append(shipComponentIIINode)
         

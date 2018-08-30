@@ -23,16 +23,15 @@ class ShipModel: SKSpriteNode {
         self.name = "SHIP"
         
         if physicsBodyEnabled == true{
-            self.anchorPoint = CGPoint(x:1.0, y: 0.0)
-            if let _shipTexture = self.texture{
-                self.physicsBody = SKPhysicsBody(texture: _shipTexture, size: CGSize(width: self.size.width, height: self.size.height))
+            self.anchorPoint = CGPoint(x:0.5, y: 0.19)
+            let hullTexture = SKTexture(imageNamed: "shipHull")
+                self.physicsBody = SKPhysicsBody(texture: hullTexture, size: hullTexture.size())
                 
                 self.physicsBody?.isDynamic = true //no gravity
                 self.physicsBody?.affectedByGravity = false
                 
                 self.physicsBody?.categoryBitMask = collisionCategory
                 self.physicsBody?.collisionBitMask = 0
-            }
         }
         
         self.position = position
