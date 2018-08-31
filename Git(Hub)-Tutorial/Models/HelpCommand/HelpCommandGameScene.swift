@@ -9,6 +9,7 @@
 import UIKit
 
 class HelpCommandGameScene: CommandGameSceneModel {
+    
     required init?(coder aDecoder: NSCoder){
         super.init(coder: aDecoder)
     }
@@ -21,6 +22,8 @@ class HelpCommandGameScene: CommandGameSceneModel {
         self.init(size: newSize)
         //for command identification
         self.name = "commit"
+        
+        
     }
     
 }

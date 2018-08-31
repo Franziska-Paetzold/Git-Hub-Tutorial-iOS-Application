@@ -13,6 +13,8 @@ class CommandGameSceneModel: SKScene {
     
     weak var myDelegate: CommandGameViewController?
     
+    var delay = false
+    
     //parent nodes for the other nodes of the skviw
     let backgroundNode = SKSpriteNode(imageNamed: "background")
     let foregroundNode = SKSpriteNode()

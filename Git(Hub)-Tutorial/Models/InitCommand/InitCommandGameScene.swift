@@ -24,6 +24,7 @@ class InitCommandGameScene: CommandGameSceneModel {
         
         //for command identification
         self.name = "init"
+        self.delay = true
         
         //============ initialization and configuration ship components============
         //shipComponent from shipComponentModel

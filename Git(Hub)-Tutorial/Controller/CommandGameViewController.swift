@@ -12,6 +12,7 @@ import SpriteKit
 class CommandGameViewController: UIViewController {
     
     var controlFlag = false
+    var delay = false
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -36,6 +37,7 @@ class CommandGameViewController: UIViewController {
         for scene in scenes{
             if (scene.name == CurrentCommand.name){
                 scene.myDelegate = self
+                delay = scene.delay
                 //show scene
                 commandGameView.presentScene(scene)
                 controlFlag = true
@@ -59,10 +61,21 @@ class CommandGameViewController: UIViewController {
 extension CommandGameViewController: SceneDelegate{
     func didFinishTask(sender: SKScene) {
         print("mini game done")
-        //dispatchQueue istead of sleep method
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            self.performSegue(withIdentifier: "segueCommandGametoCommandFeedback", sender: nil)
+        
+        if delay{
+            //dispatchQueue istead of sleep method
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self.nextViewSegue()
+            }
         }
+        else{
+            self.nextViewSegue()
+        }
+        
+    }
+    
+    func nextViewSegue(){
+        self.performSegue(withIdentifier: "segueCommandGametoCommandFeedback", sender: nil)
     }
 }
 

@@ -37,6 +37,7 @@ class AddCommandGameScene: CommandGameSceneModel, SKPhysicsContactDelegate {
         
         //for command identification
         self.name = "add"
+        self.delay = true
         
         //============ initialization and configuration ship============
         //ship from shipModel
