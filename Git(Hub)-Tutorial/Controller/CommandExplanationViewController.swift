@@ -12,8 +12,8 @@ struct CurrentCommand{
     
     //static var num: Int!
     static var num: Int! = 0
-    //static let order = ["init", "add", "commit", "status", "help"]
-    static let order = ["status"]
+    static let order = ["init", "add", "commit", "status"]
+   // static let order = ["commit"]
     static var name = CurrentCommand.order[CurrentCommand.num]
 }
 
@@ -29,7 +29,7 @@ class CommandExplanationViewController: UIViewController {
     
     
     let contentOfCommand =
-        ["init" : "init content",
+        ["init" : "Nun gut, junger Seefahrtsneuling. Zu allererst müssen wir zu unserem Heimathafen gelangen. \n \n cd benutzer/kapitaen/heimathafen \n \n Es ist offensichtlich, dass wir für unsere Reise noch ein Schiff benötigen. Du siehst mir aus als könntest du ohne Probleme selbst eins bauen. Also los! \n \n git init\n \n Beachte: Als Git(Hub)- und vielleicht auch Terminalneuling, achte darauf in den richtigen Ordner zu wechseln und nicht nur zu dem Ordner, indem sich dein Zielordner befindet.",
          "add" : "add content",
          "commit" : "commit content",
          "status" : "status content",
@@ -43,25 +43,15 @@ class CommandExplanationViewController: UIViewController {
         
         //main view
         mainView = UIView()
-        mainView.backgroundColor = .red
+        mainView.backgroundColor = .white
         self.view.addSubview(mainView)
         
         //back button
-        backButton = UIButton()
-        backButton.setTitle("zurück", for: .normal)
-        backButton.titleLabel?.textAlignment = .center
-        backButton.titleLabel?.adjustsFontSizeToFitWidth = true
-        backButton.backgroundColor = .black
-        backButton.setTitleColor(.white, for: .normal)
+        backButton = UIButtonModel(type: "back", parent: self)
         mainView.addSubview(backButton)
         
         //next view button
-        nextViewButton = UIButton()
-        nextViewButton.setTitle("weiter", for: .normal)
-        nextViewButton.titleLabel?.textAlignment = .center
-        nextViewButton.titleLabel?.adjustsFontSizeToFitWidth = true
-        nextViewButton.backgroundColor = .green
-        nextViewButton.setTitleColor(.black, for: .normal)
+        nextViewButton = UIButtonModel(type: "next", parent: self)
         mainView.addSubview(nextViewButton)
         
         //textView
@@ -71,6 +61,11 @@ class CommandExplanationViewController: UIViewController {
         textView1.text = contentOfCommand[CurrentCommand.name]
         textView1.backgroundColor = .white
         textView1.textColor = .black
+        
+        let newSize = textView1.sizeThatFits(CGSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude))
+        textView1.frame.size = CGSize(width: max(newSize.width, textView1.frame.size.width), height: max(newSize.height, textView1.frame.size.width))
+
+        
         mainView.addSubview(textView1)
         
        
@@ -94,19 +89,14 @@ class CommandExplanationViewController: UIViewController {
         backButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 40).isActive = true
         backButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
         backButton.leftAnchor.constraintEqualToSystemSpacingAfter(mainView.leftAnchor, multiplier: 0.5).isActive = true//ToDo: doesnt work
+
         
-        //###### next view button #####
-        nextViewButton.translatesAutoresizingMaskIntoConstraints = false
-        nextViewButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
-        nextViewButton.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        nextViewButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 170).isActive = true
-        nextViewButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
         
         
         //####### text view 1 ######
         textView1.translatesAutoresizingMaskIntoConstraints = false
-        textView1.widthAnchor.constraint(equalToConstant: 200).isActive = true
-        textView1.heightAnchor.constraint(equalToConstant: 80).isActive = true
+        textView1.widthAnchor.constraint(equalToConstant: self.view.frame.width-40).isActive = true
+        textView1.heightAnchor.constraint(equalToConstant: self.view.frame.height-nextViewButton.frame.height-120).isActive = true
         textView1.topAnchor.constraint(equalTo: view.topAnchor, constant: 80).isActive = true
         textView1.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
         

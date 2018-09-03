@@ -14,16 +14,8 @@ class CommitCommandGameScene: CommandGameSceneModel, UITextFieldDelegate {
     var commitTextField = UITextField()
     var counter = 0
     var showTextField = true
-    /*
-    var scrollView: UIScrollView!
-    var contentView: UIView!
-    
-    // Constraints
-    var constraintContentHeight: NSLayoutConstraint!
-    
-    var lastOffset: CGPoint!
-    var keyboardHeight: CGFloat!
-    */
+    var shipNode = ShipModel()
+    var shipGo = false
     
     required init?(coder aDecoder: NSCoder){
         super.init(coder: aDecoder)
@@ -44,8 +36,12 @@ class CommitCommandGameScene: CommandGameSceneModel, UITextFieldDelegate {
             //launching ship
             let label = UILabel(frame: commitTextField.frame)
             label.text = commitTextField.text
+            label.sizeThatFits(shipNode.size)
             self.view?.addSubview(label)
             
+            //shipGo = true
+            
+            myDelegate?.didFinishTask(sender: self)
         }
     }
     
@@ -53,10 +49,11 @@ class CommitCommandGameScene: CommandGameSceneModel, UITextFieldDelegate {
         self.init(size: newSize)
         //for command identification
         self.name = "commit"
+        self.delay = true
         
         //============ initialization and configuration ship============
         //ship from shipModel
-        let shipNode = ShipModel(position: CGPoint(x: (size.width/2), y: (size.height/5)*3.5), physicsBodyEnabled: false)
+        shipNode = ShipModel(position: CGPoint(x: (size.width/2), y: (size.height/5)*3.5), physicsBodyEnabled: false)
         foregroundNode.addChild(shipNode)
         
         //======  textfield ======
@@ -69,11 +66,21 @@ class CommitCommandGameScene: CommandGameSceneModel, UITextFieldDelegate {
         commitTextField.backgroundColor = UIColor.white
         commitTextField.placeholder = "Welche Fracht ist geladen?"
         
-        //TODO: text input needs boundaries... like 160 char or so
-        commitTextField.text = "add package"
-       
     }
     
+    /*
+    override func update(_ currentTime: TimeInterval) {
+        if(shipGo){
+            var timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: Selector(("updateCounting")), userInfo: nil, repeats: true)}
+    }
+    
+    
+    func updateCounting(){
+        NSLog("counting..")
+        shipNode.position.x = shipNode.position.x-1
+    }
+    */
+    /*
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         counter += 1
         if counter == 1 {
@@ -84,61 +91,23 @@ class CommitCommandGameScene: CommandGameSceneModel, UITextFieldDelegate {
             myDelegate?.didFinishTask(sender: self)
         }
     }
-    
-    /*
+    */
+    //called every time user leaves keyboard
     func textFieldDidEndEditing(_ textField: UITextField){
-        print("reached end of edit")
+        print("user left keyboard")
         if(textField.text!.isEmpty){
-            print("bla")
+            showTextField = true
         }
+        else{
+            showTextField = false
+        }
+        
+        didMove(to: self.view!)
     }
     
-   
-    
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         print("return pressed")
         commitTextField.resignFirstResponder()
         return false
     }
-    */
-    /*
-     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-     lastOffset = self.scrollView.contentOffset
-     return true
-     }
-     
-    func keyboardWillShow(notification: NSNotification) {
-        if keyboardHeight != nil {
-            return
-        }
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            keyboardHeight = keyboardSize.height
-            // so increase contentView's height by keyboard height
-            UIView.animate(withDuration: 0.3, animations: {
-                self.constraintContentHeight.constant += self.keyboardHeight
-            })
-            // move if keyboard hide input field
-            let distanceToBottom = self.scrollView.frame.size.height - (commitTextField.frame.origin.y) - (commitTextField.frame.size.height)
-            let collapseSpace = keyboardHeight - distanceToBottom
-            if collapseSpace < 0 {
-                // no collapse
-                return
-            }
-            // set new offset for scroll view
-            UIView.animate(withDuration: 0.3, animations: {
-                // scroll to the position above keyboard 10 points
-                self.scrollView.contentOffset = CGPoint(x: self.lastOffset.x, y: collapseSpace + 10)
-            })
-        }
-    }
-    
-    func keyboardWillHide(notification: NSNotification) {
-        UIView.animate(withDuration: 0.3) {
-            self.constraintContentHeight.constant -= self.keyboardHeight
-            self.scrollView.contentOffset = self.lastOffset
-        }
-        keyboardHeight = nil
-    }
-    */
-    
 }

@@ -12,7 +12,7 @@ import SpriteKit
 class StatusCommandGameScene: CommandGameSceneModel {
     
     var paperNode = SKSpriteNode(imageNamed: "coiledList")
-    var nextButtonNode = ButtonModel()
+    var nextButtonNode = SKButtonModel()
     var paperOpen = false
     
     
@@ -84,7 +84,7 @@ class StatusCommandGameScene: CommandGameSceneModel {
         paperNode.addChild(textNode)
         
         //display Button
-        nextButtonNode = ButtonModel(position: CGPoint(x: size.width/2, y: size.height/5*0.5), text: "weiter")
+        nextButtonNode = SKButtonModel(position: CGPoint(x: size.width/2, y: size.height/5*0.5), text: "weiter")
         addChild(nextButtonNode)
     }
     

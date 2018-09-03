@@ -1,15 +1,16 @@
 //
-//  ButtonModel.swift
+//  SKButtonModel.swift
 //  Git(Hub)-Tutorial
 //
 //  Created by Franziska Pätzold on 27.08.18.
 //  Copyright © 2018 Franziska Pätzold. All rights reserved.
 //
 
+
 import UIKit
 import SpriteKit
 
-class ButtonModel: SKSpriteNode {
+class SKButtonModel: SKSpriteNode {
     
     
     var label = SKLabelNode()
@@ -37,6 +38,57 @@ class ButtonModel: SKSpriteNode {
         addChild(self.label)
         
     }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func touchesEnded(touches: Set<UITouch>, scene: SKScene!) -> Bool{
+        for touch in touches {
+            // Get the location of the touch in this scene
+            let location = touch.location(in: scene)
+            // Check if the location of the touch is within the button's bounds
+            if self.contains(location) {
+                print("TAAAAAAAAAAAAAAAAAAAAAAAAAapped!")
+                return true
+            }
+            else{
+                return false
+            }
+        }
+        return false
+    }
+}
+
+//new:
+/*
+import UIKit
+import SpriteKit
+
+class SKButtonModel: SKShapeNode {
+    
+    //muss das geändert werden?
+    var label = SKLabelNode()
+    
+    override init(){
+        super.init()
+    }
+    
+   init(position: CGPoint, text: String) {
+        //placeholder content for required properties
+        super.init()
+        self.init(rect: CGRect(x: position.x, y: position.y, width: 100, height: 44), cornerRadius: 10)
+    
+        //apple blue
+        self.fillColor = UIColor(red: 0, green: 122, blue: 255, alpha: 1.0)
+    
+        self.label.text = text
+        self.label.verticalAlignmentMode = SKLabelVerticalAlignmentMode.center
+        self.label.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.center
+        self.label.fontColor = .black
+        addChild(self.label)
+        
+    }
    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -57,4 +109,6 @@ class ButtonModel: SKSpriteNode {
         }
         return false
     }
+    
 }
+*/

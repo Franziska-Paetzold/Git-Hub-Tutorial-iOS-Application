@@ -13,7 +13,7 @@ class InitCommandGameScene: CommandGameSceneModel {
     //collects the components of the ship
     var shipComponents : [SKSpriteNode] = []
     
-    var button = ButtonModel()
+    var button = SKButtonModel()
     
    private override init(size: CGSize) {
         super.init(size: size)
@@ -42,7 +42,7 @@ class InitCommandGameScene: CommandGameSceneModel {
         
         //============ initialization and configuration button============
         //button from buttonModel
-        button = ButtonModel(position: CGPoint(x: size.width/2, y: (size.height/5)*0.5), text: "Bauen!")
+        button = SKButtonModel(position: CGPoint(x: size.width/2, y: (size.height/5)*0.5), text: "Bauen!")
         foregroundNode.addChild(button)
     }
     
